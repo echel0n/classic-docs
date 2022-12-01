@@ -36,7 +36,8 @@ extensions = ["myst_parser",
               'sphinx_tabs.tabs',
               'notfound.extension',
               'sphinx_reredirects',
-              'sphinxcontrib.youtube'
+              'sphinxcontrib.youtube',
+              'sphinx_rtd_theme'
     ]
 myst_heading_anchors = 4
 notfound_urls_prefix = None
