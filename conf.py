@@ -114,6 +114,7 @@ html_theme_options = {
     "logo_only": True,
     "show_toc_level": 3,
     "extra_navbar": False,
+    "prev_next_buttons_location": None,
 }
 
 # Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
