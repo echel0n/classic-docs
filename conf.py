@@ -102,19 +102,7 @@ nitpicky = True
 
 
 # Theme options
-html_theme_options = {
-    "path_to_docs": "docs",
-    "repository_url": "https://github.com/terra-rebels/classic-docs",
-    "use_repository_button": True,
-    "use_edit_page_button": False,
-    "use_issues_button": True,
-    "use_repository_button": True,
-    "use_download_button": True,
-    "logo_only": True,
-    "show_toc_level": 3,
-    "extra_navbar": False,
-    "prev_next_buttons_location": "",
-}
+
 
 # Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
 redirects = {
