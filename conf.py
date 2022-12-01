@@ -13,7 +13,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
@@ -36,8 +35,7 @@ extensions = ["myst_parser",
               'sphinx_tabs.tabs',
               'notfound.extension',
               'sphinx_reredirects',
-              'sphinxcontrib.youtube',
-              'sphinx_rtd_theme'
+              'sphinxcontrib.youtube'
     ]
 myst_heading_anchors = 4
 notfound_urls_prefix = None
@@ -65,7 +63,7 @@ html_scaled_image_link = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"
 html_logo = "img/docs_logo.svg"
 html_favicon = "img/docs_favicon.ico"
 
