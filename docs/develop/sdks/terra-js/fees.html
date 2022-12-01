@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fees &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="IBC Transfers" href="ibc.html" />
+    <link rel="prev" title="Coin and Coins" href="coin-and-coins.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Terra.js </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html">Get started with Terra.js</a></li>
+<li class="toctree-l4"><a class="reference internal" href="common-examples.html">Common examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-modules.html">Add modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coin-and-coins.html">Coin and Coins</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Fees</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ibc.html">IBC Transfers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keys.html">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="make-a-connection.html">Make a connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="msgAuthorization.html">MsgAuthorization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multisend.html">MsgSend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numeric.html">Numeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="oracle-feeder.html">Oracle feeder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="query-data.html">Query data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smart-contracts.html">Smart contracts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wallets.html">Wallets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Websockets.html">Websockets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">SDKs</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Terra.js </a></li>
+      <li class="breadcrumb-item active">Fees</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/sdks/terra-js/fees.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="fees">
+<h1>Fees<a class="headerlink" href="#fees" title="Permalink to this headline"></a></h1>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Fee</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">msgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSend</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MsgSwap</span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="c1">// messages</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">fee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Fee</span><span class="p">(</span><span class="mf">50000</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">4500000</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="p">,</span><span class="w"> </span><span class="nx">fee</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="automatic-fee-estimation">
+<h2>Automatic fee estimation<a class="headerlink" href="#automatic-fee-estimation" title="Permalink to this headline"></a></h2>
+<p>If you don’t specify a fee when you create your transaction, it will automatically be estimated by simulating it within the node.</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"> </span><span class="nx">msgs</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can define the fee estimation parameters when you create your <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code> instance. The defaults are:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LCDClient</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">URL</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://lcd.terra.dev&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">chainID</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;columbus-5&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uluna</span><span class="o">:</span><span class="w"> </span><span class="kt">0.015</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="kt">1.4</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can override these settings by passing the fee estimation parameters in <code class="docutils literal notranslate"><span class="pre">wallet.createTx</span></code> or <code class="docutils literal notranslate"><span class="pre">wallet.createAndSignTx</span></code>:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAndSignTx</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">msgs</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasPrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ukrw</span><span class="o">:</span><span class="w"> </span><span class="kt">0.01</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">gasAdjustment</span><span class="o">:</span><span class="w"> </span><span class="kt">1.9</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

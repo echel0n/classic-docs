@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Staking &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Mint, burn, or swap" href="swap.html" />
+    <link rel="prev" title="Send" href="send.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Terra Station</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="download/README.html">Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/README.html#terra-station-desktop">Terra Station desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wallet.html">Wallet </a></li>
+<li class="toctree-l3"><a class="reference internal" href="send.html">Send</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Manage Staking </a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stake-luna">Stake Luna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#withdraw-staking-rewards">Withdraw staking rewards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redelegate">Redelegate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undelegate">Undelegate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="swap.html">Mint, burn, or swap </a></li>
+<li class="toctree-l3"><a class="reference internal" href="governance.html">Governance </a></li>
+<li class="toctree-l3"><a class="reference internal" href="wormhole.html">Wormhole Bridge tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multisig.html">Multisig wallets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contracts.html">Contract </a></li>
+<li class="toctree-l3"><a class="reference internal" href="testnet.html">Testnet </a></li>
+<li class="toctree-l3"><a class="reference internal" href="keplr.html">Connect your Station Wallet to Keplr</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/dapp/quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/dapp/quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/dapp/quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/dapp/quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/dapp/quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/dapp/smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Learn</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Terra Station</a></li>
+      <li class="breadcrumb-item active">Manage Staking </li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/learn/terra-station/staking.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="manage-staking">
+<h1>Manage Staking <img alt="../../../_images/Staking.svg" height="40px" src="../../../_images/Staking.svg" /><a class="headerlink" href="#manage-staking" title="Permalink to this headline"></a></h1>
+<p>Use this guide to manage your staking delegations in Terra Station. To learn how to stake or withdraw rewards, visit the Terra Station <a class="reference internal" href="download/terra-station-desktop.html"><span class="doc std std-doc">desktop</span></a> or <a class="reference internal" href="download/terra-station-mobile.html"><span class="doc std std-doc">mobile</span></a> tutorials.</p>
+<p>If this is your first time using Terra Station, follow the <a class="reference internal" href="download/terra-station-desktop.html"><span class="doc std std-doc">Terra Station tutorial</span></a>.</p>
+<div class="section" id="stake-luna">
+<h2>Stake Luna<a class="headerlink" href="#stake-luna" title="Permalink to this headline"></a></h2>
+<p>Stake your Luna to a validator to start earning rewards. Before you stake, make sure you have Luna in your wallet. You can transfer Luna from an <a class="reference internal" href="wallet.html"><span class="doc std std-doc">exchange</span></a> or <a class="reference internal" href="wallet.html"><span class="doc std std-doc">swap coins</span></a> you have for Luna.</p>
+<ol class="arabic">
+<li><p>Open Terra Station and click <strong>Staking</strong>.</p></li>
+<li><p>Select a Validator and click on their name in the <strong>Moniker</strong> column of the validator list.</p></li>
+<li><p>In the <strong>My delegations</strong> section, click <strong>Delegate</strong>. A new window will appear.</p></li>
+<li><p>In the <strong>Amount</strong> field, specify the amount of Luna you want to delegate, and click <strong>Next</strong>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Keep coins for fees</p>
+<p>Always keep some coins to pay fees with. Never stake your entire wallet amount. Without money for fees, you can’t make any transactions.</p>
+</div>
+</li>
+<li><p>Double check the amounts and fees. Enter your password and click <strong>Delegate</strong>.</p></li>
+</ol>
+<p>Congratulations, you’ve just delegated Luna!</p>
+</div>
+<div class="section" id="withdraw-staking-rewards">
+<h2>Withdraw staking rewards<a class="headerlink" href="#withdraw-staking-rewards" title="Permalink to this headline"></a></h2>
+<p>Rewards start accruing the moment you stake Luna. Monitor your rewards in the staking section of Terra Station. Once you have sufficient rewards, follow these steps to withdraw them:</p>
+<ol class="arabic simple">
+<li><p>Open Terra Station and click <strong>Staking</strong>.</p></li>
+<li><p>To claim all rewards, click <strong>Withdraw all rewards</strong> in the upper right corner of the staking page. To withdraw rewards only from a single validator, click on their name in the list and click <strong>withdraw</strong> on their page.  A new window will appear.</p></li>
+<li><p>Review the amounts and specify which coin you want to pay fees in.</p></li>
+<li><p>Enter your password and click <strong>withdraw</strong>.</p></li>
+</ol>
+<p>Congratulations, you’ve just withdrawn your staking rewards!</p>
+</div>
+<div class="section" id="redelegate">
+<h2>Redelegate<a class="headerlink" href="#redelegate" title="Permalink to this headline"></a></h2>
+<p>Redelegating lets you transfer staked Luna from one validator to another without waiting the 21-day unstaking period. Redelegating happens instantly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When a user redelegates staked Luna from one validator to another, the validator receiving the staked Luna is barred from making further redelegation transactions for 21 days. This requirement only applies to the wallet that made the redelegation transaction.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Open Terra Station and connect your wallet. Click <strong>Staking</strong>.</p></li>
+<li><p>Click on the validator you want to redelegate to.</p></li>
+<li><p>Under the <strong>My delegations</strong> section, click <strong>Redelegate</strong>.</p></li>
+<li><p>Select the validator you would like to redelegate from.</p></li>
+<li><p>Enter the amount of Luna you want to redelegate.</p></li>
+<li><p>Confirm the amounts. Enter your password and click <strong>Redelegate</strong>.</p></li>
+</ol>
+<p>Your staked Luna will be transferred to the new validator.</p>
+</div>
+<div class="section" id="undelegate">
+<h2>Undelegate<a class="headerlink" href="#undelegate" title="Permalink to this headline"></a></h2>
+<p>Undelegate Luna to unstake it from a validator. The unstaking period takes 21 days to complete.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Once started, the delegating or undelegating processes can’t be stopped.
+Undelegating takes 21 days to complete. The only way to undo a delegating or undelegating transaction is to wait for the unbonding process to pass. Alternatively, you can redelegate staked Luna to a different validator without waiting 21 days.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Open Terra Station and connect your wallet. Click <strong>Staking</strong>.</p></li>
+<li><p>Click on the validator you want to unstake from.</p></li>
+<li><p>Click <strong>Undelegate</strong> under the <strong>My delegations</strong> section.</p></li>
+<li><p>Enter the amount of Luna you want to undelegate. Click <strong>Next</strong>.</p></li>
+<li><p>Confirm the amounts. Enter your password and click <strong>Undelegate</strong>.</p></li>
+</ol>
+<p>Your staked Luna is unbonding. Please check back in 21 days to complete the process.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

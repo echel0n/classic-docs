@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Set up a production environment &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Configure general settings" href="configure-general-settings.html" />
+    <link rel="prev" title="Build Terra core" href="build-terra-core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Full node</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Run a full Terra node </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="system-config.html">System configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build-terra-core.html">Build Terra core</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Set up a production environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-server-as-a-daemon">Run the server as a daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configure-general-settings.html">Configure general settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join-a-network.html">Join a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync.html">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updates-and-additional.html">Updates and additional settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshoot.html">Reset and troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage-a-terra-validator/README.html">Manage a validator </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Node reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Full node resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Full node</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Run a full Terra node </a></li>
+      <li class="breadcrumb-item active">Set up a production environment</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/full-node/run-a-full-terra-node/set-up-production.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="set-up-a-production-environment">
+<h1>Set up a production environment<a class="headerlink" href="#set-up-a-production-environment" title="Permalink to this headline"></a></h1>
+<p>Use the following information to set up and manage your production-level full Terra node.</p>
+<p>For information about running a validator node, visit the <a class="reference internal" href="../manage-a-terra-validator/README.html"><span class="doc std std-doc">validator guide</span></a>.</p>
+<div class="section" id="create-a-dedicated-user">
+<h2>Create a dedicated user<a class="headerlink" href="#create-a-dedicated-user" title="Permalink to this headline"></a></h2>
+<p>Although <code class="docutils literal notranslate"><span class="pre">terrad</span></code> does not require a super user account, during the setup process you’ll need super user permission to create and modify some files. It is strongly recommended to use a normal user when running <code class="docutils literal notranslate"><span class="pre">terrad</span></code>.</p>
+</div>
+<div class="section" id="increase-the-maximum-files-terrad-can-open">
+<h2>Increase the maximum files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open<a class="headerlink" href="#increase-the-maximum-files-terrad-can-open" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> is set to open 1024 files by default. It is recommended that you increase this amount.</p>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">/etc/security/limits.conf</span></code><a class="reference external" href="https://linux.die.net/man/5/limits.conf">*</a> to increase the amount, where <code class="docutils literal notranslate"><span class="pre">nofile</span></code> is the number of files <code class="docutils literal notranslate"><span class="pre">terrad</span></code> can open.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you have never changed this system config or your system is fresh, most of this file will be commented</span>
+<span class="c1"># ...</span>
+*                soft    nofile          <span class="m">65535</span>   <span class="c1"># Uncomment the following two lines at the bottom</span>
+*                hard    nofile          <span class="m">65535</span>   <span class="c1"># Change the default values to ~65535</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="run-the-server-as-a-daemon">
+<h1>Run the server as a daemon<a class="headerlink" href="#run-the-server-as-a-daemon" title="Permalink to this headline"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">terrad</span></code> must be running at all times. It is recommended that you register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a <code class="docutils literal notranslate"><span class="pre">systemd</span></code> service so that it will be started automatically when the system reboots.</p>
+<div class="section" id="register-terrad-as-a-service">
+<h2>Register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a service<a class="headerlink" href="#register-terrad-as-a-service" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Create a service definition file in <code class="docutils literal notranslate"><span class="pre">/etc/systemd/system/terrad.service</span></code>.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>Terra Daemon
+<span class="nv">After</span><span class="o">=</span>network.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">User</span><span class="o">=</span>&lt;TERRA_USER&gt;
+<span class="nv">ExecStart</span><span class="o">=</span>&lt;PATH_TO_TERRAD&gt;/terrad start  
+<span class="nv">Restart</span><span class="o">=</span>on-abort
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">65535</span>  
+</pre></div>
+</div>
+</li>
+<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">Service</span></code> section according to your environment:</p>
+<ul class="simple">
+<li><p>Enter the user (likely your username, unless you created a user specifically for <code class="docutils literal notranslate"><span class="pre">terrad</span></code>)</p></li>
+<li><p>Enter the path to the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> executable. <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_TERRAD&gt;</span></code> is likely <code class="docutils literal notranslate"><span class="pre">/home/&lt;YOUR_USER&gt;/go/bin/terrad</span></code> or <code class="docutils literal notranslate"><span class="pre">/usr/go/bin</span></code>. Confirm this with <code class="docutils literal notranslate"><span class="pre">whereis</span> <span class="pre">terrad</span></code></p></li>
+<li><p>Make sure you made the correct edits to /etc/security/limits.conf</p></li>
+</ul>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">daemon-reload</span></code> followed by <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">enable</span> <span class="pre">terrad</span></code>. This will register <code class="docutils literal notranslate"><span class="pre">terrad</span></code> as a system service and turn it on upon startup.</p></li>
+<li><p>Now start the serivce with <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">terrad</span></code>.</p></li>
+</ol>
+<div class="section" id="controlling-the-service">
+<h3>Controlling the service<a class="headerlink" href="#controlling-the-service" title="Permalink to this headline"></a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">systemctl</span></code> to start, stop, and restart the service:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check health</span>
+systemctl status terrad
+<span class="c1"># Start</span>
+systemctl start terrad
+<span class="c1"># Stop</span>
+systemctl stop terrad
+<span class="c1"># Restart</span>
+systemctl restart terrad
+</pre></div>
+</div>
+</div>
+<div class="section" id="access-logs">
+<h3>Access logs<a class="headerlink" href="#access-logs" title="Permalink to this headline"></a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">-t</span></code> to access entire logs, entire logs in reverse, and the latest and continuous log.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entire log reversed</span>
+journalctl -t terrad -r
+<span class="c1"># Entire log</span>
+journalctl -t terrad
+<span class="c1"># Latest and continuous</span>
+journalctl -t terrad -f
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

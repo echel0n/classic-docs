@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signing Bytes &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Dev reference" href="../../reference/README.html" />
+    <link rel="prev" title="Terra Station Mobile App" href="station-mobile.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../README.html">Develop</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../get-started.html">How to get started </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../get-started.html#development-suite">Development Suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../get-started.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools.html">Which tools to use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/README.html">Build a dApp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../how-to/README.html">Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../open-source.html">Open source contract comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../README.html">SDKs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started-py.html">Terra<span/>.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started-py.html#usage-examples">Usage Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="README.html">Wallet Provider</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="README.html#contents">Contents </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/README.html">Dev reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resources.html">Developer resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">SDKs</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Wallet Provider</a></li>
+      <li class="breadcrumb-item active">Signing Bytes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/sdks/wallet-provider/sign-bytes.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="signing-bytes">
+<h1>Signing Bytes<a class="headerlink" href="#signing-bytes" title="Permalink to this headline"></a></h1>
+<p>You can sign arbitrary bytes with <a class="reference external" href="https://www.npmjs.com/package/&#64;terra-money/wallet-provider">Wallet Provider</a> in a React-based web application. This action is useful for verifying account ownership without having to post a transaction to the chain, and is commonly used as a form of simple user authentication.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Not using React? Use the <a class="reference external" href="https://www.npmjs.com/package/&#64;terra-money/wallet-controller">wallet-controller</a> instead.</p>
+</div>
+<p>The Wallet Provider comes with a <code class="docutils literal notranslate"><span class="pre">useConnectedWallet</span></code> hook, which lets you trigger actions from a Terra wallet that’s connected to the web page. The <code class="docutils literal notranslate"><span class="pre">connectedWallet</span></code> object includes a <code class="docutils literal notranslate"><span class="pre">.signBytes()</span></code> method, which prompts the user to sign the data and then returns an object of type <code class="docutils literal notranslate"><span class="pre">SignBytesResult</span></code>. The returned <code class="docutils literal notranslate"><span class="pre">SignBytesResult</span></code> object contains the address of the signer and the signed data.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">verifyBytes</span></code> function then compares the original <code class="docutils literal notranslate"><span class="pre">TEST_BYTES</span></code> against the signature and public key pairing returned by the <code class="docutils literal notranslate"><span class="pre">SignBytesResult</span></code>. If <code class="docutils literal notranslate"><span class="pre">verifyBytes</span></code> returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, then the account is owned by the connected wallet. Likewise, if <code class="docutils literal notranslate"><span class="pre">verifyBytes</span></code> returns <code class="docutils literal notranslate"><span class="pre">false</span></code>, then the account is not owned by the connected wallet. In this way, the owner of the associated wallet is verified without having to produce an on-chain action or pay gas fees.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can see how the <code class="docutils literal notranslate"><span class="pre">verifyBytes</span></code> function works <a class="reference external" href="https://github.com/terra-money/wallet-provider/blob/4e601c2dece7bec92c9ce95991d2314220a2c954/packages/src/%40terra-money/wallet-controller/verifyBytes.ts#L1">here</a>.*</p>
+</div>
+<p>Wallet Provider also supplies useful error types that can be used with a <code class="docutils literal notranslate"><span class="pre">catch</span></code> statement notify the user whether or not the signing was successful:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span> import {
+  SignBytesFailed,
+  SignBytesResult,
+  Timeout,
+  useConnectedWallet,
+  UserDenied,
+  verifyBytes,
+} from &#39;@terra-money/wallet-provider&#39;;
+import React, { useCallback, useState } from &#39;react&#39;;
+
+const TEST_BYTES = Buffer.from(&#39;hello&#39;); // resolves to &lt;Buffer 68 65 6c 6c 6f&gt;
+
+export function SignBytesSample() {
+  const [txResult, setTxResult] = useState&lt;SignBytesResult | null&gt;(null);
+  const [txError, setTxError] = useState&lt;string | null&gt;(null);
+  const [verifyResult, setVerifyResult] = useState&lt;string | null&gt;(null);
+
+  const connectedWallet = useConnectedWallet();
+
+  const signBytes = useCallback(async () =&gt; {
+    if (!connectedWallet) {
+      return;
+    }
+
+    try {
+        const signedBytes: SignBytesResult = await connectedWallet.signBytes(TEST_BYTES);
+        setTxResult(signedBytes);
+        setTxError(null);
+        const result = verifyBytes(TEST_BYTES, signedBytes.result);
+        setVerifyResult(result ? &#39;Verified&#39; : &#39;Verification failed&#39;);
+
+    } catch (error) {
+        setTxResult(null);
+        setVerifyResult(null);
+        if (error instanceof UserDenied) {
+            setTxError(&#39;User Denied&#39;);
+        } else if (error instanceof Timeout) {
+            setTxError(&#39;Timeout&#39;);
+        } else if (error instanceof SignBytesFailed) {
+            setTxError(&#39;Sign Bytes Failed&#39;);
+        } else {
+            setTxError(
+            &#39;Unknown Error: &#39; +
+                (error instanceof Error ? error.message : String(error)),
+            );
+        }
+    }
+  }, [connectedWallet]);
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Sign Bytes Sample&lt;/h1&gt;
+
+      {connectedWallet?.availableSignBytes &amp;&amp;
+        !txResult &amp;&amp;
+        !txError &amp;&amp;
+        !verifyResult &amp;&amp; (
+          &lt;button onClick={() =&gt; signBytes()}&gt;
+            Sign bytes with {connectedWallet.walletAddress}
+          &lt;/button&gt;
+        )}
+
+      {txResult &amp;&amp; &lt;pre&gt;{JSON.stringify(txResult, null, 2)}&lt;/pre&gt;}
+
+      {txError &amp;&amp; &lt;pre&gt;{txError}&lt;/pre&gt;}
+
+      {verifyResult &amp;&amp; &lt;pre&gt;{verifyResult}&lt;/pre&gt;}
+
+      {!connectedWallet &amp;&amp; &lt;p&gt;Wallet not connected!&lt;/p&gt;}
+
+      {connectedWallet &amp;&amp; !connectedWallet.availableSignBytes &amp;&amp; (
+        &lt;p&gt;This connection does not support signBytes()&lt;/p&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</pre></div>
+</div>
+<p>You can find this code used in context in <a class="reference external" href="https://github.com/terra-money/wallet-provider/blob/main/templates/create-react-app/src/components/SignBytesSample.tsx">Github</a>.</p>
+<p>You can view a working sandbox example of bytes signing with Terra Station on <a class="reference external" href="https://codesandbox.io/s/github/terra-money/wallet-provider/tree/main/templates/create-react-app">codesandbox.io</a>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

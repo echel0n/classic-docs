@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign with a multisig account &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Start the light client daemon (LCD)" href="start-lcd.html" />
+    <link rel="prev" title="Accounts" href="localterra/accounts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Develop</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html">How to get started </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html#development-suite">Development Suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools.html">Which tools to use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/README.html">Build a dApp</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Guides</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="terrad/README.html"><code class="docutils literal notranslate"><span class="pre">terrad</span></code> </a></li>
+<li class="toctree-l3"><a class="reference internal" href="localterra/README.html">LocalTerra </a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sign with a multisig account</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generate-a-multisig-key">Generate a Multisig key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signing-a-transaction">Signing a transaction</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="start-lcd.html">Start the light client daemon (LCD)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mint-an-nft.html">Minting an NFT on the Terra Blockchain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../open-source.html">Open source contract comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sdks/README.html">SDKs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Dev reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Developer resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Guides</a></li>
+      <li class="breadcrumb-item active">Sign with a multisig account</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/develop/how-to/sign-with-multisig.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="sign-with-a-multisig-account">
+<h1>Sign with a multisig account<a class="headerlink" href="#sign-with-a-multisig-account" title="Permalink to this headline"></a></h1>
+<p>A <strong>multisig account</strong> is a Terra account with a special key that can require more than one signatures to sign transactions. This can be useful for increasing the security of the account or for requiring the consent of multiple parties to make transactions. Multisig accounts can be created by specifying:</p>
+<ul class="simple">
+<li><p>threshold number of signatures required</p></li>
+<li><p>the public keys involved in signing</p></li>
+</ul>
+<p>To sign with a multisig account, the transaction must be signed individually by the different keys specified for the account. Then, the signatures will be combined into a multisignature which can be used to sign the transaction. If fewer than the threshold number of signatures needed are present, the resultant multisignature is considered invalid.</p>
+<div class="section" id="generate-a-multisig-key">
+<h2>Generate a Multisig key<a class="headerlink" href="#generate-a-multisig-key" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys add --multisig<span class="o">=</span>name1,name2,name3<span class="o">[</span>...<span class="o">]</span> --multisig-threshold<span class="o">=</span>K new_key_name
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">K</span></code> is the minimum number of private keys that must have signed the transactions that carry the public key’s address as signer.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--multisig</span></code> flag must contain the name of public keys that will be combined into a public key that will be generated and stored as <code class="docutils literal notranslate"><span class="pre">new_key_name</span></code> in the local database. All names supplied through <code class="docutils literal notranslate"><span class="pre">--multisig</span></code> must already exist in the local database.</p>
+<p>Unless the flag <code class="docutils literal notranslate"><span class="pre">--nosort</span></code> is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys add --multisig<span class="o">=</span>p1,p2,p3 --multisig-threshold<span class="o">=</span><span class="m">2</span> multisig_address
+terrad keys add --multisig<span class="o">=</span>p2,p3,p1 --multisig-threshold<span class="o">=</span><span class="m">2</span> multisig_address
+</pre></div>
+</div>
+<p>Multisig addresses can also be generated on-the-fly and printed through the which command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys show --multisig-threshold<span class="o">=</span>K name1 name2 name3 <span class="o">[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="signing-a-transaction">
+<h2>Signing a transaction<a class="headerlink" href="#signing-a-transaction" title="Permalink to this headline"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This example uses <code class="docutils literal notranslate"><span class="pre">test1</span></code>, <code class="docutils literal notranslate"><span class="pre">test2</span></code>, <code class="docutils literal notranslate"><span class="pre">test3</span></code> keys from <a class="reference external" href="https://github.com/terra-money/LocalTerra">LocalTerra</a>. Import them into your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> keystore to follow along.</p>
+</div>
+<div class="section" id="step-1-create-the-multisig-key">
+<h3>Step 1: Create the multisig key<a class="headerlink" href="#step-1-create-the-multisig-key" title="Permalink to this headline"></a></h3>
+<p>As an example, assume that you have <code class="docutils literal notranslate"><span class="pre">test1</span></code> and <code class="docutils literal notranslate"><span class="pre">test2</span></code> want to make a multisig account with <code class="docutils literal notranslate"><span class="pre">test3</span></code>.</p>
+<p>First, import the public keys of <code class="docutils literal notranslate"><span class="pre">test3</span></code> into your keyring:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add <span class="se">\</span>
+    test3 <span class="se">\</span>
+    --pubkey<span class="o">=</span>terrapub1addwnpepqgcxazmq6wgt2j4rdfumsfwla0zfk8e5sws3p3zg5dkm9007hmfysxas0u2
+</pre></div>
+</div>
+<p>Generate the multisig key with 2/3 threshold:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add <span class="se">\</span>
+    multi <span class="se">\</span>
+    --multisig<span class="o">=</span>test1,test2,test3 <span class="se">\</span>
+    --multisig-threshold<span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+<p>You can see its address and details:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys show multi
+
+- name: multi
+  type: multi
+  address: terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m
+  pubkey: terrapub1ytql0csgqgfzd666axrjzq3mxw59ys6yqcd3ydjvhgs0uzs6kdk5fp4t73gmkl8t6y02yfq7tvfzd666axrjzq3sd69kp5usk492x6nehqjal67ynv0nfqapzrzy3gmdk27la0kjfqfzd666axrjzq6utqt639ka2j3xkncgk65dup06t297ccljmxhvhu3rmk92u3afjuyz9dg9
+  mnemonic: <span class="s2">&quot;&quot;</span>
+  threshold: <span class="m">0</span>
+  pubkeys: <span class="o">[]</span>
+</pre></div>
+</div>
+<p>Then, add 10 LUNA to the multisig wallet:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx send <span class="se">\</span>
+    test1 <span class="se">\</span>
+    terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
+    10000000uluna <span class="se">\</span>
+    --chain-id<span class="o">=</span>localterra <span class="se">\</span>
+    --gas<span class="o">=</span>auto <span class="se">\</span>
+    --fees<span class="o">=</span>100000uluna <span class="se">\</span>
+    --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-create-the-multisig-transaction">
+<h3>Step 2: Create the multisig transaction<a class="headerlink" href="#step-2-create-the-multisig-transaction" title="Permalink to this headline"></a></h3>
+<p>Send 5 LUNA from your multisig account to <code class="docutils literal notranslate"><span class="pre">terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx bank send <span class="se">\</span>
+    terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
+    terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n <span class="se">\</span>
+    5000000uluna <span class="se">\</span>
+    --gas<span class="o">=</span><span class="m">200000</span> <span class="se">\</span>
+    --fees<span class="o">=</span>100000uluna <span class="se">\</span>
+    --chain-id<span class="o">=</span>localterra <span class="se">\</span>
+    --generate-only &gt; unsignedTx.json
+</pre></div>
+</div>
+<p>The file <code class="docutils literal notranslate"><span class="pre">unsignedTx.json</span></code> contains the unsigned transaction encoded in JSON.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;core/StdTx&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;msg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bank/MsgSend&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;from_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;to_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5000000&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;fee&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000&quot;</span><span class="w"> </span><span class="p">}],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;gas&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200000&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;signatures&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;memo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-sign-individually">
+<h3>Step 3: Sign individually<a class="headerlink" href="#step-3-sign-individually" title="Permalink to this headline"></a></h3>
+<p>Sign with <code class="docutils literal notranslate"><span class="pre">test1</span></code> and <code class="docutils literal notranslate"><span class="pre">test2</span></code> and create individual signatures.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx sign <span class="se">\</span>
+    unsignedTx.json <span class="se">\</span>
+    --multisig<span class="o">=</span>terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
+    --from<span class="o">=</span>test1 <span class="se">\</span>
+    --output-document<span class="o">=</span>test1sig.json <span class="se">\</span>
+    --chain-id<span class="o">=</span>localterra
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx sign <span class="se">\</span>
+    unsignedTx.json <span class="se">\</span>
+    --multisig<span class="o">=</span>terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m <span class="se">\</span>
+    --from<span class="o">=</span>test2 <span class="se">\</span>
+    --output-document<span class="o">=</span>test2sig.json <span class="se">\</span>
+    --chain-id<span class="o">=</span>localterra
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-create-multisignature">
+<h3>Step 4: Create multisignature<a class="headerlink" href="#step-4-create-multisignature" title="Permalink to this headline"></a></h3>
+<p>Combine signatures to sign transaction.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx multisign <span class="se">\</span>
+    unsignedTx.json <span class="se">\</span>
+    multi <span class="se">\</span>
+    test1sig.json test2sig.json <span class="se">\</span>
+    --chain-id<span class="o">=</span>localterra &gt; signedTx.json
+</pre></div>
+</div>
+<p>The TX is now signed:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;core/StdTx&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;msg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bank/MsgSend&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;from_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terra1e0fx0q9meawrcq7fmma9x60gk35lpr4xk3884m&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;to_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terra1fmcjjt6yc9wqup2r06urnrd928jhrde6gcld6n&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5000000&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;fee&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;denom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uluna&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000&quot;</span><span class="w"> </span><span class="p">}],</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;gas&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200000&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;signatures&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;pub_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tendermint/PubKeyMultisigThreshold&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;pubkeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tendermint/PubKeySecp256k1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AjszqFJDRAYbEjZMuiD+ChqzbUSGq/RRu3zr0R6iJB5b&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tendermint/PubKeySecp256k1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AjBui2DTkLVKo2p5uCXf68SbHzSDoRDESKNtsr3+vtJI&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">},</span><span class="w"></span>
+<span class="w">              </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tendermint/PubKeySecp256k1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A1xYF6iW3VSia08ItqjeBfpai+xj8tmuy/Ij3YquR6mX&quot;</span><span class="w"></span>
+<span class="w">              </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CgUIAxIBoBJA6oiaOabR1jBIbDyFj/1sYjMbYNxe+BSTnp0XYM+frC8fHxXStJ+Tl5Hf+3BsyBg1wvX1pDFsTHI7nMKNlJkKfRJAAt2cOJuViJvtwVRGwhNDORmekDSbcodnyMHTwz2Ve4db7B9m/CjYZmJtilV7zk8RWVX6Agjrl/0K5PSQZv29/A==&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;memo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5-broadcast-transaction">
+<h3>Step 5: Broadcast transaction<a class="headerlink" href="#step-5-broadcast-transaction" title="Permalink to this headline"></a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx broadcast signedTx.json <span class="se">\</span>
+    --chain-id<span class="o">=</span>localterra <span class="se">\</span>
+    --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

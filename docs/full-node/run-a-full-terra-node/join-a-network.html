@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join a network &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sync" href="sync.html" />
+    <link rel="prev" title="Configure general settings" href="configure-general-settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Full node</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Run a full Terra node </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="system-config.html">System configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build-terra-core.html">Build Terra core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html">Set up a production environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html#run-the-server-as-a-daemon">Run the server as a daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configure-general-settings.html">Configure general settings</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Join a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync.html">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updates-and-additional.html">Updates and additional settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshoot.html">Reset and troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage-a-terra-validator/README.html">Manage a validator </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Node reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Full node resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Full node</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Run a full Terra node </a></li>
+      <li class="breadcrumb-item active">Join a network</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/full-node/run-a-full-terra-node/join-a-network.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="join-a-network">
+<h1>Join a network<a class="headerlink" href="#join-a-network" title="Permalink to this headline"></a></h1>
+<p>It is highly recommended that you set up a local private network before joining a public network. This will help get familiar with the setup process, and provide an environment for testing. The following sections outline this process. If you want to join a public network without setting up a private network, you can skip to <a class="reference internal" href="#join-a-public-network"><span class="std std-doc">join a public network </span></a>.</p>
+<div class="section" id="set-up-a-local-private-network">
+<h2>Set up a local private network<a class="headerlink" href="#set-up-a-local-private-network" title="Permalink to this headline"></a></h2>
+<p>Validators can set up a private Terra network to become familiar with running a full Terra node before joining a public network.</p>
+<div class="tip admonition">
+<p class="admonition-title">LocalTerra</p>
+<p>If you are a developer and want to set up a local, WASM-enabled, private testnet for smart contracts, visit <a class="reference internal" href="../../develop/how-to/localterra/README.html"><span class="doc std std-doc">install LocalTerra</span></a>.</p>
+</div>
+<div class="section" id="create-a-single-node">
+<h3>Create a single node<a class="headerlink" href="#create-a-single-node" title="Permalink to this headline"></a></h3>
+<p>The simplest Terra network you can set up is a local testnet with just a single node. In a single-node environment, you have one account and are the only validator signing blocks for your private network.</p>
+<ol class="arabic">
+<li><p>Initialize your genesis file that will bootstrap the network. Replace the following variables with your own information:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>  terrad init --chain-id<span class="o">=</span>&lt;testnet-name&gt; &lt;node-moniker&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Generate a Terra account. Replace the variable with your account name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad keys add &lt;account-name&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Get tokens</p>
+<p>In order for Terrad to recognize a wallet address, it must contain tokens. For the testnet, use <a class="reference external" href="https://faucet.terra.money/">the faucet</a> to send Luna to your wallet. If you are on mainnet, send funds from an existing wallet. 1-3 Luna are sufficient for most setup processes.</p>
+</div>
+</div>
+<div class="section" id="add-your-account-to-the-genesis">
+<h3>Add your account to the genesis<a class="headerlink" href="#add-your-account-to-the-genesis" title="Permalink to this headline"></a></h3>
+<p>Run the following commands to add your account and set the initial balance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna,1000usd
+terrad gentx &lt;my-account&gt; 10000000uluna --chain-id<span class="o">=</span>&lt;testnet-name&gt;
+terrad collect-gentxs
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-your-private-terra-network">
+<h3>Start your private Terra network<a class="headerlink" href="#start-your-private-terra-network" title="Permalink to this headline"></a></h3>
+<p>Run the following command to start your private network:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
+</pre></div>
+</div>
+<p>If the private Terra network is set up correctly, your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> node will be running on <code class="docutils literal notranslate"><span class="pre">tcp://localhost:26656</span></code>, listening for incoming transactions, and signing blocks.</p>
+</div>
+</div>
+<div class="section" id="join-a-public-network">
+<h2>Join a public network<a class="headerlink" href="#join-a-public-network" title="Permalink to this headline"></a></h2>
+<p>These instructions are for setting up a brand new full node from scratch. You can join a public Terra network, such as the Columbus mainnet or Bombay testnet, by completing the following steps:</p>
+<div class="section" id="select-a-network">
+<h3>1. Select a network<a class="headerlink" href="#select-a-network" title="Permalink to this headline"></a></h3>
+<p>Specify the network you want to join by choosing the corresponding <strong>genesis file</strong> and <strong>seeds</strong>:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Network</p></th>
+<th class="text-left head"><p>Type</p></th>
+<th class="text-left head"><p>Genesis</p></th>
+<th class="text-left head"><p>Addressbook</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">columbus-5</span></code></p></td>
+<td class="text-left"><p>Mainnet</p></td>
+<td class="text-left"><p><a class="reference external" href="https://columbus-genesis.s3.ap-northeast-1.amazonaws.com/columbus-5-genesis.json">Genesis Link</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://network.terra.dev/addrbook.json">Addressbook Link</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">bombay-12</span></code></p></td>
+<td class="text-left"><p>Testnet</p></td>
+<td class="text-left"><p><a class="reference external" href="https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json">Genesis Link</a></p></td>
+<td class="text-left"><p><a class="reference external" href="https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json"> Addressbook Link </a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">Selecting a network</p>
+<p>Note that the versions of the network listed above are the <a class="reference external" href="https://github.com/terra-money/testnet/tree/master#latest-networks"> latest versions </a>. To find earlier versions, please consult the <a class="reference external" href="https://github.com/terra-money/testnet">networks repo</a>.</p>
+</div>
+</div>
+<div class="section" id="download-genesis-file-and-address-book">
+<h3>2. Download genesis file and address book<a class="headerlink" href="#download-genesis-file-and-address-book" title="Permalink to this headline"></a></h3>
+<p><strong>Genesis-transaction</strong> specifies the account balances and parameters at the start of the network to use when replaying transactions and syncing.</p>
+<p><strong>Addressbook</strong> lists a selection of peers for your node to dial to in order to discover other nodes in the network. Public address books of peers are made available by the Terra community.</p>
+<p>Choose a <code class="docutils literal notranslate"><span class="pre">testnet</span></code> or <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> address type and download the appropriate genesis-transaction and addressbook. Links to these are posted in <span class="xref myst">Select-a-network</span>.</p>
+<ul class="simple">
+<li><p>For default <code class="docutils literal notranslate"><span class="pre">terrad</span></code> configurations, the <code class="docutils literal notranslate"><span class="pre">genesis</span></code> and <code class="docutils literal notranslate"><span class="pre">addressbook</span></code> files should be placed under <code class="docutils literal notranslate"><span class="pre">~/.terra/config/genesis.json</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code> respectively.</p></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtain the genesis for the bombay-12 testnet:</span>
+wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/genesis.json -I ~/.terra/config/genesis.json
+
+<span class="c1"># Obtain the addressbook for the bombay-12 testnet:</span>
+wget https://raw.githubusercontent.com/terra-money/testnet/master/bombay-12/addrbook.json -O ~/.terra/config/addrbook.json
+</pre></div>
+</div>
+</div>
+<div class="section" id="terrad-start">
+<h3>3. <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code><a class="headerlink" href="#terrad-start" title="Permalink to this headline"></a></h3>
+<p>Start the network and check that everything is running smoothly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
+terrad status
+<span class="c1"># It will take a few seconds for terrad to start.</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Healthy Node Status Example<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;NodeInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;protocol_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;p2p&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;block&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;app&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terradocs-id&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;listen_addr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp://0.0.0.0:26656&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;network&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bombay-12&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.34.14&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;channels&quot;</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40202122233038606100&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;moniker&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;terradocs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;other&quot;</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;tx_index&quot;</span><span class="w">   </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;rpc_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp://127.0.0.1:26657&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SyncInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;latest_block_hash&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19ABCBA90BF3E76A0635E6C961AB2CECC7DB2B1F1338057DB334568128E0776E&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;latest_app_hash&quot;</span><span class="w">      </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8DFE69CF66FBE7ADCDB5B430A0C679C45B6AEBDDAE23835ABDC4ACBC704F7525&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;latest_block_height&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7333450&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;latest_block_time&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-01-08T05:24:57.383258076Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;earliest_block_hash&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E88E3641A488EBA3D402FC072879C6399AA2CDC7B6CC5A3061E5A64D9FFD3BDE&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;earliest_app_hash&quot;</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;earliest_block_height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5900001&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;earliest_block_time&quot;</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-09-28T09:00:00Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;catching_up&quot;</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">                         </span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ValidatorInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;29E58C21B6612227C9C9BD9E6D4D99897E032572&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;PubKey&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tendermint/PubKeyEd25519&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7cZq+Fp9xU8mZ9xR7q4NpDOX0UicmPC68P/4krCn8Hs=&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;VotingPower&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</details><p>Your node is now syncing. This process will take a long time. Make sure you’ve set it up on a stable connection so you can leave while it syncs.</p>
+<div class="caution admonition">
+<p class="admonition-title">Sync start times</p>
+<p>Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.</p>
+</div>
+<p>Continue to the <a class="reference internal" href="sync.html"><span class="doc std std-doc">Sync</span></a> page to find out more about syncing your node.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Terra core &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Set up a production environment" href="set-up-production.html" />
+    <link rel="prev" title="System configuration" href="system-config.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Full node</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Run a full Terra node </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="system-config.html">System configuration</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Build Terra core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html">Set up a production environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html#run-the-server-as-a-daemon">Run the server as a daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configure-general-settings.html">Configure general settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join-a-network.html">Join a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync.html">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updates-and-additional.html">Updates and additional settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshoot.html">Reset and troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage-a-terra-validator/README.html">Manage a validator </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Node reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Full node resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Full node</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Run a full Terra node </a></li>
+      <li class="breadcrumb-item active">Build Terra core</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/full-node/run-a-full-terra-node/build-terra-core.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="build-terra-core">
+<h1>Build Terra core<a class="headerlink" href="#build-terra-core" title="Permalink to this headline"></a></h1>
+<p>Terra core is the official Golang reference implementation of the Terra node software. Use this guide to install Terra core and <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, the command-line interface and daemon that connects to Terra and enables you to interact with the Terra blockchain.</p>
+<div class="section" id="get-the-terra-core-source-code">
+<h2>Get the Terra core source code<a class="headerlink" href="#get-the-terra-core-source-code" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span></code> to retrieve <a class="reference external" href="https://github.com/terra-money/core/">Terra core</a>, and check out the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which contains the latest stable release.</p>
+<ul class="simple">
+<li><p>If you are using LocalTerra or running a validator, use the <code class="docutils literal notranslate"><span class="pre">v0.x.x-oracle</span></code> tag. Otherwise, use the <code class="docutils literal notranslate"><span class="pre">v0.x.x</span></code> tag.</p></li>
+<li><p>You can find out the latest tag on the <a class="reference external" href="https://github.com/terra-money/core/tags">tags page</a> or via autocomplete in your terminal: type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">v</span></code> and press <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code>.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/terra-money/core
+<span class="nb">cd</span> core
+git checkout <span class="o">[</span>latest version<span class="o">]</span> <span class="c1"># ex., git checkout v0.5.13-oracle</span>
+</pre></div>
+</div>
+</li>
+<li><p>Build Terra core. This will install the <code class="docutils literal notranslate"><span class="pre">terrad</span></code> executable to your <a class="reference external" href="https://go.dev/doc/gopath_code"> <code class="docutils literal notranslate"><span class="pre">GOPATH</span></code> </a> environment variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install
+</pre></div>
+</div>
+</li>
+<li><p>Verify that Terra core is installed correctly.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad version --long
+</pre></div>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name: terra
+server_name: terrad
+client_name: terrad
+version: <span class="m">0</span>.3.0-24-g3684f77
+commit: 3684f77faadf6cf200d18e15763316d5d9c5a496
+build_tags: netgo,ledger
+go: go version go1.13.4 darwin/amd64
+<span class="c1"># ...And a bunch of dependenecies</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">terrad:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> error message is returned, confirm that the Go binary path is correctly configured by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span>go env GOPATH<span class="k">)</span>/bin
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Troubleshoot validator problems &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Restore a validator" href="restore.html" />
+    <link rel="prev" title="Register a validator" href="set-up-validator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Full node</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../run-a-full-terra-node/README.html">Run a full Terra node </a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Manage a validator </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#additional-resources">Additional resources</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="court-delegations.html">Court delegations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="faq.html">Validator FAQ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="implement-security.html">Implement security practices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-oracle-feeder.html">Set up an oracle feeder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-validator.html">Register a validator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-validator.html#restore-a-validator">Restore a validator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Troubleshoot validator problems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="restore.html">Restore a validator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Node reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Full node resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Full node</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Manage a validator </a></li>
+      <li class="breadcrumb-item active">Troubleshoot validator problems</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/full-node/manage-a-terra-validator/troubleshoot-validator-problems.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="troubleshoot-validator-problems">
+<h1>Troubleshoot validator problems<a class="headerlink" href="#troubleshoot-validator-problems" title="Permalink to this headline"></a></h1>
+<p>Use this guide to solve the most common validator problems.</p>
+<div class="section" id="validator-has-0-voting-power">
+<h2>Validator has 0 voting power<a class="headerlink" href="#validator-has-0-voting-power" title="Permalink to this headline"></a></h2>
+<p>If your validator has 0 voting power, your validator has become auto-unbonded. On the mainnet, validators unbond when they do not vote on <code class="docutils literal notranslate"><span class="pre">9500</span></code> of the last <code class="docutils literal notranslate"><span class="pre">10000</span></code> blocks (<code class="docutils literal notranslate"><span class="pre">50</span></code> of the last <code class="docutils literal notranslate"><span class="pre">100</span></code> blocks on the testnet). Because blocks are proposed every ~5 seconds, a validator that is unresponsive for ~13 hours (~4 minutes on testnet) become unbonded. This problem usually happens when your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> process crashes.</p>
+<p>To return the voting power back to your validator:</p>
+<ol class="arabic">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">terrad</span></code> is not running, restart it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
+</pre></div>
+</div>
+</li>
+<li><p>Wait for your full node to reach the latest block, and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad tx slashing unjail &lt;terra&gt; --chain-id<span class="o">=</span>&lt;chain_id&gt; --from<span class="o">=</span>&lt;from&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;terra&gt;</span></code> is the address of your validator account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> is the name of the validator account. To find this information, run <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">keys</span> <span class="pre">list</span></code>.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you don’t wait for <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to sync before running <code class="docutils literal notranslate"><span class="pre">unjail</span></code>, an error message will inform you that your validator is still jailed.</p>
+</div>
+</li>
+<li><p>Check your validator again to see if your voting power is back:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status
+</pre></div>
+</div>
+<p>If your voting power is less than it was previously, you may have been slashed for downtime.</p>
+</div>
+<div class="section" id="terrad-crashes-because-of-too-many-open-files">
+<h2><code class="docutils literal notranslate"><span class="pre">terrad</span></code> crashes because of too many open files<a class="headerlink" href="#terrad-crashes-because-of-too-many-open-files" title="Permalink to this headline"></a></h2>
+<p>The default number of files Linux can open per process is <code class="docutils literal notranslate"><span class="pre">1024</span></code>. <code class="docutils literal notranslate"><span class="pre">terrad</span></code> is known to open more than this amount, causing the process to crash.</p>
+<ol class="arabic">
+<li><p>Increase the number of open files allowed by running <code class="docutils literal notranslate"><span class="pre">ulimit</span> <span class="pre">-n</span> <span class="pre">4096</span></code>.</p></li>
+<li><p>Restart the process with <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code>.</p>
+<p>If you are using <code class="docutils literal notranslate"><span class="pre">systemd</span></code> or another process manager to launch <code class="docutils literal notranslate"><span class="pre">terrad</span></code>, you might need to configure them. The following  sample <code class="docutils literal notranslate"><span class="pre">systemd</span></code> file fixes the problem:</p>
+<div class="highlight-systemd notranslate"><div class="highlight"><pre><span></span># /etc/systemd/system/terrad.service
+[Unit]
+Description=Terra Columbus Node
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu
+ExecStart=/home/ubuntu/go/bin/terrad start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="terrad-crashes-because-of-memory-fragmentation">
+<h2><code class="docutils literal notranslate"><span class="pre">terrad</span></code> crashes because of memory fragmentation<a class="headerlink" href="#terrad-crashes-because-of-memory-fragmentation" title="Permalink to this headline"></a></h2>
+<p>As described in <a class="reference external" href="https://github.com/terra-money/core/issues/592">this issue</a>, huge memory allocation can cause memory fragmentation issue. Temporal solution is just using small wasm cache size like 50~100MB.</p>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.10+</span></code>:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">contract-memory-cache-size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">v0.5.7~v0.5.9</span></code>:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">write-vm-memory-cache-size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="oracle-voting-errors">
+<h2>Oracle voting errors<a class="headerlink" href="#oracle-voting-errors" title="Permalink to this headline"></a></h2>
+<p>You might receive the following error message by the <a class="reference external" href="https://github.com/terra-money/oracle-feeder">Terra Oracle feeder</a>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`broadcast error: code: 3, raw_log: validator does not exist: terravaloperxxx`
+</pre></div>
+</div>
+<p>This message occurs for the following reasons:</p>
+<div class="section" id="the-validator-is-not-active">
+<h3>The validator is not active<a class="headerlink" href="#the-validator-is-not-active" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p>The validator is jailed. To solve this problem, <code class="docutils literal notranslate"><span class="pre">unjail</span></code> the validator by running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">tx</span> <span class="pre">slashing</span> <span class="pre">unjail</span> <span class="pre">&lt;terra&gt;</span> <span class="pre">--chain-id=&lt;chain_id&gt;</span> <span class="pre">--from=&lt;from&gt;</span></code></p>
+</li>
+<li><p>The validator is not in the <a class="reference internal" href="../../learn/glossary.html#active-set"><span class="std std-doc">active validator set</span></a>. Only the top 130 validators are in this set. To fix this problem, increase your total stake to be larger than the 130th validator.</p></li>
+</ul>
+</div>
+<div class="section" id="the-network-is-wrong">
+<h3>The network is wrong<a class="headerlink" href="#the-network-is-wrong" title="Permalink to this headline"></a></h3>
+<p>The oracle feeder might be submitting to the wrong network. To fix this problem, run the feeder with the lite client daemon (LCD) specified:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nom start vote --<span class="se">\</span>
+  --source http://localhost:8532/latest <span class="se">\</span>
+  --lcd <span class="si">${</span><span class="nv">LCD</span><span class="si">}</span> <span class="se">\</span>
+  --chain-id <span class="s2">&quot;</span><span class="si">${</span><span class="nv">CHAIN_ID</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+  --validator <span class="s2">&quot;</span><span class="si">${</span><span class="nv">VALIDATOR_KEY</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+  --password <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+</pre></div>
+</div>
+<p>The LCD the voter is connecting to might be running on a different network than your node. The remote LCD for different networks are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lcd.terra.dev">Columbus mainnet</a></p></li>
+<li><p><a class="reference external" href="https://bombay-lcd.terra.dev">Bombay testnet</a></p></li>
+</ul>
+<p>Ensure you specify the LCD for the same network to which your node is connecting.</p>
+<p>If you run a <a class="reference internal" href="../../develop/how-to/start-lcd.html"><span class="doc std std-doc">local LCD</span></a> (for example, localhost:1317), ensure your LCD is connecting to the same node.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CW20 Tokens &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Guides" href="../../how-to/README.html" />
+    <link rel="prev" title="Interacting with the Contract" href="interact-with-smart-contract.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">In-depth dApp guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="build-terra-dapp.html">Build a simple Terra dApp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set-up-local-environment.html">Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="write-smart-contract.html">Writing the Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interact-with-smart-contract.html">Interacting with the Contract</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CW20 Tokens</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#checking-cw20-balance">Checking CW20 balance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interacting-with-cw20-contract">Interacting with CW20 contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-cw20-token-to-another-contract-and-execute-message">Sending CW20 token to another contract, and execute message</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transferring-cw20-token">Transferring CW20 token</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#developer-tools">Developer tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#why-build-on-terra">Why build on Terra?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Build a dApp</a></li>
+          <li class="breadcrumb-item"><a href="README.html">In-depth dApp guide</a></li>
+      <li class="breadcrumb-item active">CW20 Tokens</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/dapp/smart-contracts/manage-cw20-tokens.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="cw20-tokens">
+<h1>CW20 Tokens<a class="headerlink" href="#cw20-tokens" title="Permalink to this headline"></a></h1>
+<p>According to the <a class="reference external" href="https://docs.rs/crate/cw20/0.2.3">official documentation</a></p>
+<blockquote>
+<div><p>CW20 is a specification for fungible tokens based on CosmWasm. The name and design is loosely based on Ethereum’s ERC20 standard, but many changes have been made. The types in here can be imported by contracts that wish to implement this spec, or by contracts that call to any standard cw20 contract.</p>
+</div></blockquote>
+<div class="section" id="checking-cw20-balance">
+<h2>Checking CW20 balance<a class="headerlink" href="#checking-cw20-balance" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Query to <code class="docutils literal notranslate"><span class="pre">/wasm/contracts/&lt;tokenContractAddress&gt;/store</span></code> with query_msg <code class="docutils literal notranslate"><span class="pre">{&quot;balance&quot;:{&quot;address&quot;:&quot;&lt;userAddress&gt;&quot;}}</span></code></p></li>
+<li><p>Response: <code class="docutils literal notranslate"><span class="pre">{&quot;height&quot;:&quot;2947306&quot;,&quot;result&quot;:{&quot;balance&quot;:&quot;24732816921&quot;}}</span></code></p></li>
+<li><p><a class="reference external" href="https://bombay-lcd.terra.dev/wasm/contracts/terra1800p00qlxh0nmt0r0u9hv7m4lg042fnafng2t6/store?query_msg=%7B%22balance%22:%7B%22address%22:%22terra1dakqt3s8dywea9advxz4duxkuvglz3a34yczw9%22%7D%7D">Example</a></p></li>
+</ul>
+</div>
+<div class="section" id="interacting-with-cw20-contract">
+<h2>Interacting with CW20 contract<a class="headerlink" href="#interacting-with-cw20-contract" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>CW20 is a cosmwasm contract and <code class="docutils literal notranslate"><span class="pre">wasm/MsgExecuteContract</span></code> is used to interact with it</p></li>
+<li><p>Breakdown of message payload format is as follows (similar to <code class="docutils literal notranslate"><span class="pre">bank/MsgSend</span></code> but <code class="docutils literal notranslate"><span class="pre">execute_msg</span></code> is added):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wasm/MsgExecuteContract&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">sender</span> <span class="n">address</span>
+    <span class="s2">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;terra1zyrpkll2xpgcdsz42xm3k8qfnddcdu0w7jzx6y&quot;</span><span class="p">,</span>
+
+    <span class="o">//</span> <span class="n">token</span> <span class="n">contract</span> <span class="n">address</span>
+    <span class="s2">&quot;contract&quot;</span><span class="p">:</span> <span class="s2">&quot;terra1rz5chzn0g07hp5jx63srpkhv8hd7x8pss20w2e&quot;</span><span class="p">,</span>
+
+    <span class="o">//</span> <span class="n">base64</span><span class="o">-</span><span class="n">encoded</span> <span class="n">payload</span> <span class="n">of</span> <span class="n">contract</span> <span class="n">execution</span> <span class="n">message</span> <span class="p">(</span><span class="n">refer</span> <span class="n">to</span> <span class="n">below</span><span class="p">)</span>
+    <span class="s2">&quot;execute_msg&quot;</span><span class="p">:</span> <span class="s2">&quot;ewogICJzZW5kIjogewogICAgImFtb3VudCI6ICIxMDAwMDAwMDAwIiwKICAgICJjb250cmFjdCI6IDxyZWNpcGllbnRDb250cmFjdEFkZHJlc3M+LAogICAgIm1zZyI6ICJleUp6YjIxbFgyMWxjM05oWjJVaU9udDlmUT09IiAKICB9Cn0=&quot;</span><span class="p">,</span>
+
+    <span class="o">//</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">case</span> <span class="n">you</span> <span class="n">are</span> <span class="n">sending</span> <span class="n">native</span> <span class="n">tokens</span> <span class="n">along</span> <span class="k">with</span> <span class="n">this</span> <span class="n">message</span>
+    <span class="s2">&quot;coins&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sending-cw20-token-to-another-contract-and-execute-message">
+<h2>Sending CW20 token to another contract, and execute message<a class="headerlink" href="#sending-cw20-token-to-another-contract-and-execute-message" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Example</p>
+<ul>
+<li><p><a class="reference external" href="https://finder.terra.money/columbus-5/tx/99CFBABE9DBC1059EF40B985D17ED9CCBA11570B28B032D4E57D527FD298F60A">Finder</a></p></li>
+<li><p><a class="reference external" href="https://lcd.terra.dev/txs/99CFBABE9DBC1059EF40B985D17ED9CCBA11570B28B032D4E57D527FD298F60A">Raw result</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// base64-encode the below message (without the comments), send that as `execute_msg`
+{
+  &quot;send&quot;: {
+    // amount of CW20 tokens being transferred
+    &quot;amount&quot;: &quot;1000000000&quot;,
+
+    // recipient of this transfer
+    &quot;contract&quot;: &lt;recipientContractAddress&gt;,
+
+    // execute_msg to be executed in the context of recipient contract
+    &quot;msg&quot;: &quot;eyJzb21lX21lc3NhZ2UiOnt9fQ==&quot; 
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="transferring-cw20-token">
+<h2>Transferring CW20 token<a class="headerlink" href="#transferring-cw20-token" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">transfer</span></code> is different to <code class="docutils literal notranslate"><span class="pre">send</span></code>, as in it only <strong>transfers</strong> ownership of CW20 balance within the contract, whereas <code class="docutils literal notranslate"><span class="pre">send</span></code> is capable of transferring &amp; relays a contract msg to be executed</p></li>
+<li><p>Example</p>
+<ul>
+<li><p><a class="reference external" href="https://finder.terra.money/columbus-5/tx/F424552E25FDE52FEC229E04AE719A5B91D99E1088DC5F4978B263516A269FB1">Finder</a></p></li>
+<li><p><a class="reference external" href="https://lcd.terra.dev/txs/F424552E25FDE52FEC229E04AE719A5B91D99E1088DC5F4978B263516A269FB1">Raw result</a></p></li>
+</ul>
+</li>
+<li><p>Find other messages at <a class="reference external" href="https://docs.rs/crate/cw20/0.8.1">cw20 documentation</a></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;transfer&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;recipient&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;recipient&gt;&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

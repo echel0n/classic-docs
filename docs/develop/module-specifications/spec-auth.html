@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auth &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AuthZ" href="spec-authz.html" />
+    <link rel="prev" title="Terra Core modules" href="README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dapp/smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Terra Core modules </a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Auth</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gas-fee">Gas Fee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spec-authz.html">AuthZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-bank.html">Bank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-capability.html">Capability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-distribution.html">Distribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-evidence.html">Evidence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-feegrant.html">Fee grant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-governance.html">Governance </a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-market.html">Market </a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-oracle.html">Oracle </a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-slashing.html">Slashing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-staking.html">Staking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-treasury.html">Treasury</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec-wasm.html">WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#how-to-use-the-terra-core-module-specifications">How to use the Terra Core module specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#module-architecture">Module architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#block-lifecycle">Block lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#conventions">Conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Terra Core modules </a></li>
+      <li class="breadcrumb-item active">Auth</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/develop/module-specifications/spec-auth.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="auth">
+<h1>Auth<a class="headerlink" href="#auth" title="Permalink to this headline"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Terra’s auth module inherits from Cosmos SDK’s <a class="reference external" href="https://docs.cosmos.network/master/modules/auth/"><code class="docutils literal notranslate"><span class="pre">auth</span></code></a> module. This document is a stub and covers mainly important Terra-specific notes about how it is used.</p>
+</div>
+<p>Terra’s Auth module extends the functionality from Cosmos SDK’s <code class="docutils literal notranslate"><span class="pre">auth</span></code> module with a modified ante handler, which applies basic transaction validity checks, such as signatures, nonces, and auxiliary fields. This module also defines a special vesting account type that handles the logic for token vesting from the Luna presale.</p>
+<div class="section" id="gas-fee">
+<h2>Gas Fee<a class="headerlink" href="#gas-fee" title="Permalink to this headline"></a></h2>
+<p>Like all transactions on the Terra blockchain, <a class="reference internal" href="spec-bank.html#msgsend"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgSend</span></code></span></a> and <a class="reference internal" href="spec-bank.html#msgmultisend"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MsgMultiSend</span></code></span></a> incur gas fees. These fees are determined by a validator’s minimum gas price and the complexity of the transaction. More complex transactions incur higher fees. Gas fees are specified by the sender when a transaction is outbound. For more information on how gas is calculated, see <a class="reference internal" href="../how-to/terrad/using-terrad.html#fees"><span class="std std-doc">fees</span></a>.</p>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
+<p>The subspace for the Auth module is <code class="docutils literal notranslate"><span class="pre">auth</span></code>.</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">type</span><span class="w"> </span><span class="nx">Params</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">MaxMemoCharacters</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;max_memo_characters&quot; yaml:&quot;max_memo_characters&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">TxSigLimit</span><span class="w">             </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;tx_sig_limit&quot; yaml:&quot;tx_sig_limit&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">TxSizeCostPerByte</span><span class="w">      </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;tx_size_cost_per_byte&quot; yaml:&quot;tx_size_cost_per_byte&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">SigVerifyCostED25519</span><span class="w">   </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;sig_verify_cost_ed25519&quot; yaml:&quot;sig_verify_cost_ed25519&quot;`</span><span class="w"></span>
+<span class="w">	</span><span class="nx">SigVerifyCostSecp256k1</span><span class="w"> </span><span class="kt">uint64</span><span class="w"> </span><span class="s">`json:&quot;sig_verify_cost_secp256k1&quot; yaml:&quot;sig_verify_cost_secp256k1&quot;`</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="maxmemocharacters">
+<h3>MaxMemoCharacters<a class="headerlink" href="#maxmemocharacters" title="Permalink to this headline"></a></h3>
+<p>The maximum permitted number of characters in the memo of a transaction.</p>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">256</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="txsiglimit">
+<h3>TxSigLimit<a class="headerlink" href="#txsiglimit" title="Permalink to this headline"></a></h3>
+<p>The maximum number of signers in a transaction. A single transaction can have multiple messages and multiple signers. Because the sig verification cost is generally higher than other operations, the number of signers is limited to 100.</p>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="txsizecostperbyte">
+<h3>TxSizeCostPerByte<a class="headerlink" href="#txsizecostperbyte" title="Permalink to this headline"></a></h3>
+<p>The cost per byte used to compute the gas consumption of a transaction. <code class="docutils literal notranslate"><span class="pre">TxSizeCostPerByte</span> <span class="pre">*</span> <span class="pre">txsize</span></code>.</p>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="sigverifycosted25519">
+<h3>SigVerifyCostED25519<a class="headerlink" href="#sigverifycosted25519" title="Permalink to this headline"></a></h3>
+<p>The gas cost for verifying ED25519 signatures.</p>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">590</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="sigverifycostsecp256k1">
+<h3>SigVerifyCostSecp256k1<a class="headerlink" href="#sigverifycostsecp256k1" title="Permalink to this headline"></a></h3>
+<p>The gas cost for verifying Secp256k1 signatures.</p>
+<ul class="simple">
+<li><p>type: <code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">1000</span></code></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

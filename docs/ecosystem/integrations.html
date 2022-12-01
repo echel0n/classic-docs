@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrations &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="History and changes" href="../develop/reference/history-and-changes.html" />
+    <link rel="prev" title="Developer resources" href="../develop/resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../develop/README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/dapp/quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/dapp/quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/dapp/quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/dapp/quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/dapp/quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/dapp/smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Block explorers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#block-explorers">Block explorers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#applications">Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exchanges">Exchanges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wallets">Wallets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../develop/README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../develop/reference/README.html">Dev reference</a></li>
+      <li class="breadcrumb-item active">Integrations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/ecosystem/integrations.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="integrations">
+<h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline"></a></h1>
+<div class="section" id="block-explorers">
+<h2>Block explorers<a class="headerlink" href="#block-explorers" title="Permalink to this headline"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/expl_finder.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/expl_finder.png" />
+<p class="sd-card-text"><strong>Terra Finder</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://finder.terra.money/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/expl_terrascope.svg" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/expl_terrascope.svg" /><p class="sd-card-text"><strong>Terrascope Finder</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://terrasco.pe/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/expl_hubble.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/expl_hubble.png" />
+<p class="sd-card-text"><strong>Figment Hubble</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://hubble.figment.io/terra/chains/columbus-5"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/expl_stakeid.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/expl_stakeid.png" />
+<p class="sd-card-text"><strong><a class="reference external" href="http://Stake.id">Stake.id</a></strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://terra.stake.id/#/"></a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/apps_mirror.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/apps_mirror.png" />
+<p class="sd-card-text"><strong>Mirror</strong><br />
+A DeFi protocol that enables the creation of synthetic assets.</p>
+</div>
+<a class="sd-stretched-link reference external" href="https://mirror.finance/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/apps_anchor.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/apps_anchor.png" />
+<p class="sd-card-text"><strong>Anchor</strong><br />
+A high-yield savings protocol.</p>
+</div>
+<a class="sd-stretched-link reference external" href="https://anchor.money/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/apps_buzlink.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/apps_buzlink.png" />
+<p class="sd-card-text"><strong>BuzLink</strong><br />
+A viral marketing product to scale social referrals.</p>
+</div>
+<a class="sd-stretched-link reference external" href="https://buzlink.io/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/apps_memepay.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/apps_memepay.png" />
+<p class="sd-card-text"><strong>MemePay</strong><br />
+A payments product used in Mongolia</p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.meme.mn/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/apps_paywithterra.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/apps_paywithterra.png" />
+<p class="sd-card-text"><strong>PayWithTerra</strong><br />
+An API gateway enabling merchants to accept Terra stablecoins</p>
+</div>
+<a class="sd-stretched-link reference external" href="https://paywithterra.com/"></a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exchanges">
+<h2>Exchanges<a class="headerlink" href="#exchanges" title="Permalink to this headline"></a></h2>
+<p>Luna and Terra stablecoins are traded on the following exchanges:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_binance.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_binance.png" />
+<p class="sd-card-text"><strong>Binance</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.binance.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_huobi.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_huobi.png" />
+<p class="sd-card-text"><strong>Huobi</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.huobi.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_kucoin.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_kucoin.png" />
+<p class="sd-card-text"><strong>Kucoin</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.kucoin.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_bithumb.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_bithumb.png" />
+<p class="sd-card-text"><strong>Bithumb</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.bithumb.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_upbit.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_upbit.png" />
+<p class="sd-card-text"><strong>Upbit</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.upbit.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_bittrex.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_bittrex.png" />
+<p class="sd-card-text"><strong>Bittrex</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.global.bittrex.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_coinone.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_coinone.png" />
+<p class="sd-card-text"><strong>CoinOne</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://coinone.co.kr/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_okex.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_okex.png" />
+<p class="sd-card-text"><strong>OKEx</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.okex.com/"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_voyager.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_voyager.png" />
+<p class="sd-card-text"><strong>Voyager</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.investvoyager.com"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_coinlist.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_coinlist.png" />
+<p class="sd-card-text"><strong>CoinList</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://coinlist.co/anchor-protocol"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_coinex.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_coinex.png" />
+<p class="sd-card-text"><strong>CoinEx</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://coinex.com"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center sd-shadow-md sd-rounded-3 docutils">
+<div class="sd-card-body docutils">
+<img alt="../../_images/exg_bitfinex.png" class="sd-width-auto sd-animate-grow50-rot20 sd-pb-2" src="../../_images/exg_bitfinex.png" />
+<p class="sd-card-text"><strong>Bitfinex</strong></p>
+</div>
+<a class="sd-stretched-link reference external" href="https://www.bitfinex.com/"></a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wallets">
+<h2>Wallets<a class="headerlink" href="#wallets" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://station.terra.money/">Terra Station</a>: Terra’s native wallet<br>
+Terra Station Extension: <a class="reference external" href="https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp">Chrome</a><br>
+Terra Station Desktop: <a class="reference external" href="https://github.com/terra-money/station-legacy/releases/download/v3.5.0/Terra.Station-1.1.0.dmg">MacOS</a> | <a class="reference external" href="https://github.com/terra-money/station/releases/download/v3.5.0/Terra.Station.Setup.1.1.0.exe">Windows</a> | <a class="reference external" href="https://github.com/terra-money/station/releases/download/v3.5.0/station-electron_1.1.1_amd64.deb">Linux (deb)</a> | <a class="reference external" href="https://github.com/terra-money/station/releases/download/v3.5.0/station-electron-1.1.1.x86_64.rpm">Linux (rpm)</a><br>
+Terra Station Mobile: <a class="reference external" href="https://apps.apple.com/app/id1548434735">iOS</a> | <a class="reference external" href="https://play.google.com/store/apps/details?id=money.terra.station">Android</a><br>
+<a class="reference external" href="https://mirrorwallet.com/">Mirror Wallet</a>: Invest and trade cryptocurrencies and mirror assets<br>
+<a class="reference external" href="https://mathwallet.org/en-us/">MathWallet</a>: multi-platform crypto wallet for Terra assets<br>
+<a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360017698979-Terra-LUNA-">Ledger Nano X/S</a>: hardware wallet by the Ledger team<br>
+<a class="reference external" href="https://www.oxis.com/">Oxis</a>: non-custodial wallet with fiat to crypto on and offramps &amp; trading functionality<br></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

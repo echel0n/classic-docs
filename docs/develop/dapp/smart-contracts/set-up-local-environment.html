@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Environment Setup &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Writing the Contract" href="write-smart-contract.html" />
+    <link rel="prev" title="Build a simple Terra dApp" href="build-terra-dapp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">In-depth dApp guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="build-terra-dapp.html">Build a simple Terra dApp</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Environment Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-terra-core-locally">Install Terra Core locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-localterra">Download LocalTerra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-rust">Install Rust</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="write-smart-contract.html">Writing the Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interact-with-smart-contract.html">Interacting with the Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manage-cw20-tokens.html">CW20 Tokens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#developer-tools">Developer tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#why-build-on-terra">Why build on Terra?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Build a dApp</a></li>
+          <li class="breadcrumb-item"><a href="README.html">In-depth dApp guide</a></li>
+      <li class="breadcrumb-item active">Environment Setup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/dapp/smart-contracts/set-up-local-environment.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="environment-setup">
+<h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline"></a></h1>
+<p>As a smart contract developer, you will need to write, compile, upload, and test your contracts before deploying them on the Columbus mainnet. The first step is to set up a specialized environment to streamline development.</p>
+<div class="section" id="install-terra-core-locally">
+<h2>Install Terra Core locally<a class="headerlink" href="#install-terra-core-locally" title="Permalink to this headline"></a></h2>
+<p>Visit <a class="reference internal" href="../../../full-node/run-a-full-terra-node/build-terra-core.html"><span class="doc std std-doc">build Terra core</span></a> to install the latest version of Terra Core to obtain a working version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code>. You will need this to connect to your local Terra test network to work with smart contracts.</p>
+</div>
+<div class="section" id="download-localterra">
+<h2>Download LocalTerra<a class="headerlink" href="#download-localterra" title="Permalink to this headline"></a></h2>
+<p>In order to work with Terra Smart Contracts, you should have access to a Terra network that includes the WASM integration.</p>
+<p>In this tutorial, you will be using <a class="reference external" href="https://github.com/terra-money/localterra">LocalTerra</a>, a package that enables you to easily spin up a local, WASM-enabled private testnet. This reduces the friction of development by giving you complete control of a private Terra blockchain with the possibility to easily reset the world state.</p>
+<p>To use <strong>LocalTerra</strong>, you should first make sure Docker is installed on your computer by following the <a class="reference external" href="https://www.docker.com/get-started">Docker get-started tutorial</a>. You will also need to set up and configure <a class="reference external" href="https://docs.docker.com/compose/install/">Docker Compose</a> on your machine.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/terra-money/localterra
+<span class="nb">cd</span> localterra
+docker-compose up
+</pre></div>
+</div>
+<p>You should now have a local testnet running on your machine, with the following configurations:</p>
+<ul class="simple">
+<li><p>Node listening on RPC port <code class="docutils literal notranslate"><span class="pre">26657</span></code></p></li>
+<li><p>LCD running on port <code class="docutils literal notranslate"><span class="pre">1317</span></code></p></li>
+<li><p>Swagger Documentation at <a class="reference external" href="http://localhost:3060/swagger">http://localhost:3060/swagger</a></p></li>
+</ul>
+<p>The account with the following mnemonic is the sole validator on the network and has enough funds to get started with smart contracts.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">satisfy</span> <span class="n">adjust</span> <span class="n">timber</span> <span class="n">high</span> <span class="n">purchase</span> <span class="n">tuition</span> <span class="n">stool</span> <span class="n">faith</span> <span class="n">fine</span> <span class="n">install</span> <span class="n">that</span> <span class="n">you</span> <span class="n">unaware</span> <span class="n">feed</span> <span class="n">domain</span> <span class="n">license</span> <span class="n">impose</span> <span class="n">boss</span> <span class="n">human</span> <span class="n">eager</span> <span class="n">hat</span> <span class="n">rent</span> <span class="n">enjoy</span> <span class="n">dawn</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-rust">
+<h2>Install Rust<a class="headerlink" href="#install-rust" title="Permalink to this headline"></a></h2>
+<p>While WASM smart contracts can theoretically be written in any programming language, it is currently only recommended to use Rust as it is the only language for which mature libraries and tooling exist for CosmWasm. For this tutorial, you’ll need to also install the latest version of Rust by following the instructions <a class="reference external" href="https://www.rust-lang.org/tools/install">here</a>.</p>
+<p>Once you’ll installed Rust and its toolchain (cargo et al.), you’ll need to add the <code class="docutils literal notranslate"><span class="pre">wasm32-unknown-unknown</span></code> compilation target.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rustup default stable
+rustup target add wasm32-unknown-unknown
+</pre></div>
+</div>
+<p>Then, install <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code>, which you will need for bootstrapping new CosmWasm smart contracts via a template.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo install cargo-generate --features vendored-openssl
+</pre></div>
+</div>
+<p>Next, install <code class="docutils literal notranslate"><span class="pre">cargo-run-script</span></code>, which is required to optimize smart contracts.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cargo install cargo-run-script
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Migrating CosmWasm contracts on Terra &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Build a CW20 tokens factory" href="cw20-factory.html" />
+    <link rel="prev" title="Mint an NFT using Terrain" href="mint-an-nft.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Terrain Quickstart</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="initial-setup.html">Terrain initial setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mint-an-nft.html">Mint an NFT using Terrain</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Migrating CosmWasm contracts on Terra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html">Build a CW20 tokens factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#instantiate-a-new-app-using-terrain">1. Instantiate a new app using Terrain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#instantiate-the-token-factory-and-cw20-factory-token-contracts">2. Instantiate the <code class="docutils literal notranslate"><span class="pre">token-factory</span></code> and <code class="docutils literal notranslate"><span class="pre">cw20-factory-token</span></code> contracts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#modify-the-mnemonics-passphrase">3. Modify the mnemonics passphrase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#deploy-the-smart-contracts">4. Deploy the smart contracts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#modify-the-cw20-factory-token-smart-contract">5. Modify the CW20 Factory Token smart contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#create-the-token-factory-smart-contract">3. Create the Token Factory smart contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cw20-factory.html#deploy-the-smart-contract-to-localterra">7. Deploy the smart contract to LocalTerra</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Build a dApp</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Terrain quickstart guide</a></li>
+      <li class="breadcrumb-item active">Migrating CosmWasm contracts on Terra</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/dapp/quick-start/contract-migration.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="migrating-cosmwasm-contracts-on-terra">
+<h1>Migrating CosmWasm contracts on Terra<a class="headerlink" href="#migrating-cosmwasm-contracts-on-terra" title="Permalink to this headline"></a></h1>
+<p>Contracts on Terra can be initialized as <span class="xref myst">migratable</span>, which allows the administrator to upload a new version of the contract and then send a migrate message to move to the new code.</p>
+<p>This tutorial uses <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain</span></a>, a Terra development suite designed to simplify the scaffolding, deployment, and migration of your contracts.</p>
+<p>If this is your first time using Terrain, visit the <a class="reference internal" href="initial-setup.html"><span class="doc std std-doc">Initial setup guide</span></a>.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>There are two key components to a migratable contract:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> transaction.</p></li>
+<li><p>An admin set, which is the address that’s allowed to perform migrations.</p></li>
+</ul>
+</div>
+<div class="section" id="add-migratemsg-to-contract">
+<h2>1. Add <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> to contract<a class="headerlink" href="#add-migratemsg-to-contract" title="Permalink to this headline"></a></h2>
+<p>To implement support for <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>, add the following to <code class="docutils literal notranslate"><span class="pre">msg.rs</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]</span><span class="w"></span>
+<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">MigrateMsg</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can place this message anywhere, however; it is usually placed above the <code class="docutils literal notranslate"><span class="pre">InstantiateMsg</span></code> struct.</p>
+</div>
+</div>
+<div class="section" id="update-contract-rs">
+<h2>2. Update <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code><a class="headerlink" href="#update-contract-rs" title="Permalink to this headline"></a></h2>
+<p>Now that <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code> is defined, you will need to update <code class="docutils literal notranslate"><span class="pre">contract.rs</span></code>:</p>
+<ol class="arabic">
+<li><p>Update the import from <code class="docutils literal notranslate"><span class="pre">crate::msg</span></code> to include <code class="docutils literal notranslate"><span class="pre">MigrateMsg</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">crate</span><span class="p">::</span><span class="n">msg</span><span class="p">::{</span><span class="n">CountResponse</span><span class="p">,</span> <span class="n">ExecuteMsg</span><span class="p">,</span> <span class="n">InstantiateMsg</span><span class="p">,</span> <span class="n">QueryMsg</span><span class="p">,</span> <span class="n">MigrateMsg</span><span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the following method above <code class="docutils literal notranslate"><span class="pre">instantiate</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#[cfg_attr(not(feature = &quot;library&quot;), entry_point)]</span>
+<span class="n">pub</span> <span class="n">fn</span> <span class="n">migrate</span><span class="p">(</span><span class="n">_deps</span><span class="p">:</span> <span class="n">DepsMut</span><span class="p">,</span> <span class="n">_env</span><span class="p">:</span> <span class="n">Env</span><span class="p">,</span> <span class="n">_msg</span><span class="p">:</span> <span class="n">MigrateMsg</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StdResult</span><span class="o">&lt;</span><span class="n">Response</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="n">Ok</span><span class="p">(</span><span class="n">Response</span><span class="p">::</span><span class="n">default</span><span class="p">())</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="call-migrate">
+<h2>3. Call migrate<a class="headerlink" href="#call-migrate" title="Permalink to this headline"></a></h2>
+<p>In previous <a class="reference internal" href="README.html"><span class="doc std std-doc">Terrain tutorials</span></a>, you learned how to deploy the contract. Now you will be able to initialize it as migratable.</p>
+<p>After adding MigrateMsg to the smart contract, redeploy and add the <code class="docutils literal notranslate"><span class="pre">--set-signer-as-admin</span></code> flag.
+This flag tells Terra that the transaction signer is allowed to migrate the contract in the future:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">deploy</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">signer</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">admin</span>
+</pre></div>
+</div>
+<p>With the new contract deployed you can make some changes then migrate to the new code with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">contract</span><span class="p">:</span><span class="n">migrate</span> <span class="n">counter</span> <span class="o">--</span><span class="n">signer</span> <span class="n">test1</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interacting with the Contract &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="CW20 Tokens" href="manage-cw20-tokens.html" />
+    <link rel="prev" title="Writing the Contract" href="write-smart-contract.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">In-depth dApp guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="build-terra-dapp.html">Build a simple Terra dApp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="set-up-local-environment.html">Environment Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="write-smart-contract.html">Writing the Contract</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Interacting with the Contract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uploading-code">Uploading Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-contract">Creating the Contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#executing-the-contract">Executing the Contract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#whats-next">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="manage-cw20-tokens.html">CW20 Tokens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#developer-tools">Developer tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#why-build-on-terra">Why build on Terra?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Build a dApp</a></li>
+          <li class="breadcrumb-item"><a href="README.html">In-depth dApp guide</a></li>
+      <li class="breadcrumb-item active">Interacting with the Contract</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/dapp/smart-contracts/interact-with-smart-contract.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="interacting-with-the-contract">
+<h1>Interacting with the Contract<a class="headerlink" href="#interacting-with-the-contract" title="Permalink to this headline"></a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also follow these steps in the official desktop wallet for Terra, <a class="reference external" href="https://station.terra.money">Terra Station</a>.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<p>Make sure you have set up <strong>LocalTerra</strong> and that it is up and running:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> localterra
+docker-compose up
+</pre></div>
+</div>
+<p>You should also have the latest version of <code class="docutils literal notranslate"><span class="pre">terrad</span></code> by building the latest version of Terra Core. You will configure <code class="docutils literal notranslate"><span class="pre">terrad</span></code> to use it against your isolated testnet environment.</p>
+<p>In a separate terminal, make sure to set up the following mnemonic:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad keys add test1 --recover
+</pre></div>
+</div>
+<p>Using the mnemonic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">satisfy</span> <span class="n">adjust</span> <span class="n">timber</span> <span class="n">high</span> <span class="n">purchase</span> <span class="n">tuition</span> <span class="n">stool</span> <span class="n">faith</span> <span class="n">fine</span> <span class="n">install</span> <span class="n">that</span> <span class="n">you</span> <span class="n">unaware</span> <span class="n">feed</span> <span class="n">domain</span> <span class="n">license</span> <span class="n">impose</span> <span class="n">boss</span> <span class="n">human</span> <span class="n">eager</span> <span class="n">hat</span> <span class="n">rent</span> <span class="n">enjoy</span> <span class="n">dawn</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uploading-code">
+<h2>Uploading Code<a class="headerlink" href="#uploading-code" title="Permalink to this headline"></a></h2>
+<p>Make sure that the <strong>optimized build</strong> of <code class="docutils literal notranslate"><span class="pre">my_first_contract.wasm</span></code> that you created in the last section is in your current working directory.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm store artifacts/my_first_contract.wasm --from test1 --chain-id<span class="o">=</span>localterra --gas<span class="o">=</span>auto --fees<span class="o">=</span>100000uluna --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+<p>Or, if you are on an arm64 machine:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm store artifacts/my_first_contract-aarch64.wasm --from test1 --chain-id<span class="o">=</span>localterra --gas<span class="o">=</span>auto --fees<span class="o">=</span>100000uluna --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+<p>This will ask for a confirmation before broadcasting to LocalTerra, type <code class="docutils literal notranslate"><span class="pre">y</span></code> and press enter.</p>
+<p>You should see output similar to the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>height: <span class="m">6</span>
+txhash: 83BB9C6FDBA1D2291E068D5CF7DDF7E0BE459C6AF547EC82652C52507CED8A9F
+codespace: <span class="s2">&quot;&quot;</span>
+code: <span class="m">0</span>
+data: <span class="s2">&quot;&quot;</span>
+rawlog: <span class="s1">&#39;[{&quot;msg_index&quot;:0,&quot;log&quot;:&quot;&quot;,&quot;events&quot;:[{&quot;type&quot;:&quot;message&quot;,&quot;attributes&quot;:[{&quot;key&quot;:&quot;action&quot;,&quot;value&quot;:&quot;store_code&quot;},{&quot;key&quot;:&quot;module&quot;,&quot;value&quot;:&quot;wasm&quot;}]},{&quot;type&quot;:&quot;store_code&quot;,&quot;attributes&quot;:[{&quot;key&quot;:&quot;sender&quot;,&quot;value&quot;:&quot;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&quot;},{&quot;key&quot;:&quot;code_id&quot;,&quot;value&quot;:&quot;1&quot;}]}]}]&#39;</span>
+logs:
+- msgindex: <span class="m">0</span>
+  log: <span class="s2">&quot;&quot;</span>
+  events:
+  - type: message
+    attributes:
+    - key: action
+      value: store_code
+    - key: module
+      value: wasm
+  - type: store_code
+    attributes:
+    - key: sender
+      value: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
+    - key: code_id
+      value: <span class="s2">&quot;1&quot;</span>
+info: <span class="s2">&quot;&quot;</span>
+gaswanted: <span class="m">681907</span>
+gasused: <span class="m">680262</span>
+tx: null
+timestamp: <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>As you can see, your contract was successfully instantiated with Code ID #1.</p>
+<p>You can check it out:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm code <span class="m">1</span>
+codeid: <span class="m">1</span>
+codehash: <span class="nv">KVR4SWuieLxuZaStlvFoUY9YXlcLLMTHYVpkubdjHEI</span><span class="o">=</span>
+creator: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-the-contract">
+<h2>Creating the Contract<a class="headerlink" href="#creating-the-contract" title="Permalink to this headline"></a></h2>
+<p>You have now uploaded the code for your contract, but still don’t have a contract. Create it with the following InitMsg:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can compress the JSON into 1 line with <a class="reference external" href="https://goonlinetools.com/json-minifier/">this online tool</a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm instantiate <span class="m">1</span> <span class="s1">&#39;{&quot;count&quot;:0}&#39;</span> --from test1 --chain-id<span class="o">=</span>localterra --fees<span class="o">=</span>10000uluna --gas<span class="o">=</span>auto --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+<p>You should get a response like the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>height: <span class="m">41</span>
+txhash: AEF6F2FA570029A5D4C0DA5ACFA4A2B614D5811E29EEE10FF59F821AFECCD399
+codespace: <span class="s2">&quot;&quot;</span>
+code: <span class="m">0</span>
+data: <span class="s2">&quot;&quot;</span>
+rawlog: <span class="s1">&#39;[{&quot;msg_index&quot;:0,&quot;log&quot;:&quot;&quot;,&quot;events&quot;:[{&quot;type&quot;:&quot;instantiate_contract&quot;,&quot;attributes&quot;:[{&quot;key&quot;:&quot;owner&quot;,&quot;value&quot;:&quot;terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8&quot;},{&quot;key&quot;:&quot;code_id&quot;,&quot;value&quot;:&quot;1&quot;},{&quot;key&quot;:&quot;contract_address&quot;,&quot;value&quot;:&quot;terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5&quot;}]},{&quot;type&quot;:&quot;message&quot;,&quot;attributes&quot;:[{&quot;key&quot;:&quot;action&quot;,&quot;value&quot;:&quot;instantiate_contract&quot;},{&quot;key&quot;:&quot;module&quot;,&quot;value&quot;:&quot;wasm&quot;}]}]}]&#39;</span>
+logs:
+- msgindex: <span class="m">0</span>
+  log: <span class="s2">&quot;&quot;</span>
+  events:
+  - type: instantiate_contract
+    attributes:
+    - key: owner
+      value: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
+    - key: code_id
+      value: <span class="s2">&quot;1&quot;</span>
+    - key: contract_address
+      value: terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
+  - type: message
+    attributes:
+    - key: action
+      value: instantiate_contract
+    - key: module
+      value: wasm
+info: <span class="s2">&quot;&quot;</span>
+gaswanted: <span class="m">120751</span>
+gasused: <span class="m">120170</span>
+tx: null
+timestamp: <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>From the output, you can see that your contract was created above at: <code class="docutils literal notranslate"><span class="pre">terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5</span></code>. Take note of this contract address, as you will need it for the next section.</p>
+<p>Check out your contract information:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm contract terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
+address: terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5
+owner: terra1dcegyrekltswvyy0xy69ydgxn9x8x32zdtapd8
+codeid: <span class="m">1</span>
+initmsg: <span class="nv">eyJjb3VudCI6MH0</span><span class="o">=</span>
+migratable: <span class="nb">false</span>
+</pre></div>
+</div>
+<p>You can use the following to decode the Base64 InitMsg:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">eyJjb3VudCI6MH0</span><span class="o">=</span> <span class="p">|</span> base64 --decode
+</pre></div>
+</div>
+<p>This will produce the message you used when initializing the contract:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="executing-the-contract">
+<h2>Executing the Contract<a class="headerlink" href="#executing-the-contract" title="Permalink to this headline"></a></h2>
+<p>Let’s do the following:</p>
+<ol class="arabic simple">
+<li><p>Reset count to 5</p></li>
+<li><p>Increment twice</p></li>
+</ol>
+<p>If done properly, you should get a count of 7.</p>
+<div class="section" id="reset">
+<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline"></a></h3>
+<p>First, to burn:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;reset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 <span class="s1">&#39;{&quot;reset&quot;:{&quot;count&quot;:5}}&#39;</span> --from test1 --chain-id<span class="o">=</span>localterra --fees<span class="o">=</span>1000000uluna --gas<span class="o">=</span>auto --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+</div>
+<div class="section" id="incrementing">
+<h3>Incrementing<a class="headerlink" href="#incrementing" title="Permalink to this headline"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;increment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad tx wasm execute terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 <span class="s1">&#39;{&quot;increment&quot;:{}}&#39;</span> --from test1 --chain-id<span class="o">=</span>localterra --gas<span class="o">=</span>auto --fees<span class="o">=</span>1000000uluna --broadcast-mode<span class="o">=</span>block
+</pre></div>
+</div>
+</div>
+<div class="section" id="querying-count">
+<h3>Querying count<a class="headerlink" href="#querying-count" title="Permalink to this headline"></a></h3>
+<p>Check the result of your executions!</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;get_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrad query wasm contract-store terra18vd8fpwxzck93qlwghaj6arh4p7c5n896xzem5 <span class="s1">&#39;{&quot;get_count&quot;:{}}&#39;</span>
+</pre></div>
+</div>
+<p>Expected output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query_result</span><span class="p">:</span>
+  <span class="n">count</span><span class="p">:</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>Excellent! Congratulations, you’ve created your first smart contract, and now know how to get developing with the Terra dApp Platform.</p>
+</div>
+</div>
+<div class="section" id="whats-next">
+<h2>What’s Next?<a class="headerlink" href="#whats-next" title="Permalink to this headline"></a></h2>
+<p>We’ve only walked through a simple example of a smart contract, that modifies a simple balance within its internal state. Although this is enough to make a simple dApp, you can power more interesting applications by <strong>emitting messages</strong>, which will enable you to interact with other contracts as well as the rest of the blockchain’s module.</p>
+<p>Check out a couple more examples of smart contracts using Terra’s smart contract <a class="reference external" href="https://github.com/terra-money/cosmwasm-contracts">repo</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

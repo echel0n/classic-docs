@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Use Terrain with LocalTerra &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Mint an NFT using Terrain" href="mint-an-nft.html" />
+    <link rel="prev" title="Use Terrain with the testnet" href="using-terrain-testnet.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Use Terrain with LocalTerra</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-and-run-localterra">Install and run LocalTerra</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#counter-tutorial">Counter tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scaffold-your-dapp">1. Scaffold your dApp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#project-structure">Project structure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deploy">2. Deploy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interact-with-the-deployed-contract">3. Interact with the deployed contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#front-end-scaffolding">4. Front-end scaffolding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo">Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-usage">Advanced usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sdks/terra-js/README.html">Terra.js </a></li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Build a dApp</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Terrain quickstart guide</a></li>
+      <li class="breadcrumb-item active">Use Terrain with LocalTerra</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/dapp/quick-start/using-terrain-localterra.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="use-terrain-with-localterra">
+<h1>Use Terrain with LocalTerra<a class="headerlink" href="#use-terrain-with-localterra" title="Permalink to this headline"></a></h1>
+<p>LocalTerra is a complete Terra testnet and ecosystem containerized with Docker. Use LocalTerra to simulate transactions in a test environment.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.docker.com/">Docker</a></p></li>
+<li><p><a class="reference external" href="https://github.com/docker/compose"><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></a></p></li>
+<li><p>At least 16 GB of RAM</p></li>
+<li><p><a class="reference internal" href="../../../learn/terra-station/download/terra-station-extension.html"><span class="doc std std-doc">Terra Station Chrome extension</span></a></p></li>
+<li><p>Node.js version 16</p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Node version error</p>
+<p>Use LTS Node.js 16 if you encounter the following error code:<br />
+<code class="docutils literal notranslate"><span class="pre">error:0308010C:digital</span> <span class="pre">envelope</span> <span class="pre">routines::unsupported</span></code></p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="header-target">
+<summary class="sd-summary-title sd-card-header">
+Running NPM on M1 Macs<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Some M1 macs may need to use the latest LTS version of Node to complete this tutorial. Consider using a node version manager such as <a class="reference external" href="https://github.com/nvm-sh/nvm/blob/master/README.md">NVM</a>.
+After installing NVM, run the following to install and use the latest LTS version of node:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nvm install --lts
+nvm use --lts
+</pre></div>
+</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">nvm</span> <span class="pre">use</span> <span class="pre">--lts</span></code> command will need to be run every time you open a new terminal to use the LTS version of node.</p>
+<p class="sd-card-text">To default to the LTS version of node when restarting your terminal, run the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nvm <span class="nb">alias</span> default &lt;INSERT NODE VERSION HERE&gt;
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="section" id="install-and-run-localterra">
+<h2>Install and run LocalTerra<a class="headerlink" href="#install-and-run-localterra" title="Permalink to this headline"></a></h2>
+<ol class="arabic">
+<li><p>To download LocalTerra, run the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone --branch v0.5.2 --depth <span class="m">1</span> https://github.com/terra-money/localterra
+</pre></div>
+</div>
+</li>
+<li><p>Start LocalTerra by running the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> localterra
+docker-compose up
+</pre></div>
+</div>
+</li>
+<li><p>You will start seeing LocalTerra block activity in your terminal. Keep LocalTerra running while you perform the next steps in a new terminal window.</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">LocalTerra Accounts</p>
+<p>To view the LocalTerra wallet information, visit the <a class="reference internal" href="../../how-to/localterra/accounts.html"><span class="doc std std-doc">LocalTerra accounts page</span></a>.
+For more configuration options, visit the <a class="reference internal" href="../../how-to/localterra/configure.html"><span class="doc std std-doc">LocalTerra configuration page</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="counter-tutorial">
+<h1>Counter tutorial<a class="headerlink" href="#counter-tutorial" title="Permalink to this headline"></a></h1>
+<p>After installing LocalTerra, you are ready to use Terrain. This short tutorial walks you through setting up your project and creating a simple counter.</p>
+<div class="section" id="scaffold-your-dapp">
+<h2>1. Scaffold your dApp<a class="headerlink" href="#scaffold-your-dapp" title="Permalink to this headline"></a></h2>
+<p>With Terrain installed you can now scaffold your new application in a new terminal window:</p>
+<ol class="arabic">
+<li><p>Create a new folder for your dApp:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain new my-terra-dapp
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are using an M1 Mac, see <a class="reference internal" href="#header-target"><span class="std std-ref">Running NPM on M1 Macs</span></a> before proceeding.</p>
+</div>
+</li>
+<li><p>Scaffold your dApp:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> my-terra-dapp
+npm install
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="section" id="project-structure">
+<h3>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline"></a></h3>
+<p>The following structure shows your scaffolded project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── contracts              # The contracts&#39; source code.
+│   ├── counter
+│   └── ...                # Add more contracts here.
+├── frontend               # The front-end application.
+├── lib                    # Predefined functions for task and console.
+├── tasks                  # Predefined tasks.
+├── keys.terrain.js        # Keys for signing transactions.
+├── config.terrain.json    # Config for connections and contract deployments.
+└── refs.terrain.json      # Deployed code and contract references.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deploy">
+<h2>2. Deploy<a class="headerlink" href="#deploy" title="Permalink to this headline"></a></h2>
+<p>To deploy the application, run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain deploy counter --signer test1
+</pre></div>
+</div>
+<p>The deploy command performs the following steps automatically:</p>
+<ul class="simple">
+<li><p>Builds the counter smart contract.</p></li>
+<li><p>Optimizes the counter smart contract.</p></li>
+<li><p>Uploads counter smart contract to LocalTerra.</p></li>
+<li><p>Instantiates the deployed smart contract.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Increase Docker memory</p>
+<p>If you are running LocalTerra and the previous <code class="docutils literal notranslate"><span class="pre">deploy</span></code> command is not working, try increasing Docker’s memory allowance by clicking on the Docker icon. Click <strong>Preferences</strong> and then <strong>Resources</strong>. Increase the memory to at least 4 gigs. Click <strong>Apply &amp; Restart</strong>. Run the deploy command again. You can increase again to 6 gigs if you are still having trouble.</p>
+</div>
+</div>
+<div class="section" id="interact-with-the-deployed-contract">
+<h2>3. Interact with the deployed contract<a class="headerlink" href="#interact-with-the-deployed-contract" title="Permalink to this headline"></a></h2>
+<p>The template comes with several predefined helpers in <code class="docutils literal notranslate"><span class="pre">lib/index.js</span></code>. Use them to start interacting with your smart contract:</p>
+<ol class="arabic">
+<li><p>Run the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>terrain console
+</pre></div>
+</div>
+</li>
+<li><p>With the console open, increment the counter by running the following:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">increment</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>You can get the current count by using:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nx">lib</span><span class="p">.</span><span class="nx">getCount</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>After incrementing once, <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">lib.getCount()</span></code> will return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{ count: 1 }
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Before proceeding to the next section, kill the running command in your terminal by entering “Ctrl + C” .</p>
+</div>
+</div>
+<div class="section" id="front-end-scaffolding">
+<h2>4. Front-end scaffolding<a class="headerlink" href="#front-end-scaffolding" title="Permalink to this headline"></a></h2>
+<p>Terrain also scaffolds a very simple front-end:</p>
+<ol class="arabic">
+<li><p>Open the <a class="reference external" href="https://chrome.google.com/webstore/detail/terra-station-wallet/aiifbnbfobpmeekipheeijimdpnlpgpp">Terra Station Chrome extension</a>, click the gear icon, and switch the network to Localterra.</p></li>
+<li><p>To use the front end, run the following commands in order. The <code class="docutils literal notranslate"><span class="pre">terrain</span> <span class="pre">sync-refs</span></code> command copies your deployed contract addresses to the front-end part of the codebase.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrain</span> <span class="n">sync</span><span class="o">-</span><span class="n">refs</span>
+<span class="n">cd</span> <span class="n">frontend</span>
+<span class="n">npm</span> <span class="n">install</span>
+<span class="n">npm</span> <span class="n">start</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the Terra Station extension and click <strong>Add a wallet</strong>. Click <strong>Recover wallet</strong> and input the following seed phrase to access the sole validator on the LocalTerra network and gain funds to get started with smart contracts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">satisfy</span> <span class="n">adjust</span> <span class="n">timber</span> <span class="n">high</span> <span class="n">purchase</span> <span class="n">tuition</span> <span class="n">stool</span> <span class="n">faith</span> <span class="n">fine</span> <span class="n">install</span> <span class="n">that</span> <span class="n">you</span> <span class="n">unaware</span> <span class="n">feed</span> <span class="n">domain</span> <span class="n">license</span> <span class="n">impose</span> <span class="n">boss</span> <span class="n">human</span> <span class="n">eager</span> <span class="n">hat</span> <span class="n">rent</span> <span class="n">enjoy</span> <span class="n">dawn</span>
+</pre></div>
+</div>
+</li>
+<li><p>With LocalTerra selected in Terra Station and the local seed phrase imported, you can now increment and reset the counter from the front end.</p></li>
+</ol>
+</div>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline"></a></h2>
+<p><img alt="" src="../../../../_images/tut_counter.gif" /></p>
+</div>
+<div class="section" id="advanced-usage">
+<h2>Advanced usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline"></a></h2>
+<p>For more advanced use cases, like deploying to the testnet or mainnet, see <a class="reference external" href="https://github.com/terra-money/terrain#readme">Terrain’s readme</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset and troubleshooting &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Manage a validator" href="../manage-a-terra-validator/README.html" />
+    <link rel="prev" title="Updates and additional settings" href="updates-and-additional.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Full node</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Run a full Terra node </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="system-config.html">System configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build-terra-core.html">Build Terra core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html">Set up a production environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html#run-the-server-as-a-daemon">Run the server as a daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configure-general-settings.html">Configure general settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join-a-network.html">Join a network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync.html">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updates-and-additional.html">Updates and additional settings</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Reset and troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage-a-terra-validator/README.html">Manage a validator </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Node reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Full node resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Full node</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Run a full Terra node </a></li>
+      <li class="breadcrumb-item active">Reset and troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/full-node/run-a-full-terra-node/troubleshoot.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="reset-and-troubleshooting">
+<h1>Reset and troubleshooting<a class="headerlink" href="#reset-and-troubleshooting" title="Permalink to this headline"></a></h1>
+<div class="section" id="complete-reset">
+<h2>Complete reset<a class="headerlink" href="#complete-reset" title="Permalink to this headline"></a></h2>
+<p>Occasionally you may need to perform a comlpete reset of your node due to data corruption or misconfiguration. Resetting will remove all data in <code class="docutils literal notranslate"><span class="pre">~/.terra/data</span></code> and the addressbook in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code> and reset the node to genesis state.</p>
+<p>To perform a complete reset of your <code class="docutils literal notranslate"><span class="pre">terrad</span></code> state, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terrad</span> <span class="n">unsafe</span><span class="o">-</span><span class="n">reset</span><span class="o">-</span><span class="nb">all</span>
+</pre></div>
+</div>
+<p>Running this command successfully will produce the following log:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">INF</span> <span class="p">]</span> <span class="n">Removed</span> <span class="n">existing</span> <span class="n">address</span> <span class="n">book</span> <span class="n">file</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/.</span><span class="n">terra</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">addrbook</span><span class="o">.</span><span class="n">json</span>
+<span class="p">[</span> <span class="n">INF</span> <span class="p">]</span> <span class="n">Removed</span> <span class="nb">all</span> <span class="n">blockchain</span> <span class="n">history</span> <span class="nb">dir</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/.</span><span class="n">terra</span><span class="o">/</span><span class="n">data</span>
+<span class="p">[</span> <span class="n">INF</span> <span class="p">]</span> <span class="n">Reset</span> <span class="n">private</span> <span class="n">validator</span> <span class="n">file</span> <span class="n">to</span> <span class="n">genesis</span> <span class="n">state</span> <span class="n">keyFile</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/.</span><span class="n">terra</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">priv_validator_key</span><span class="o">.</span><span class="n">json</span> <span class="n">stateFile</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/.</span><span class="n">terra</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">priv_validator_state</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Check the adressbook</p>
+<p>After resetting, make sure the addressbook contains peer addresses and is in the correct spot. If not, <a class="reference internal" href="join-a-network.html#select-a-network"><span class="std std-doc">download an adressbook</span></a> and place it in <code class="docutils literal notranslate"><span class="pre">~/.terra/config/</span></code>.</p>
+</div>
+<div class="section" id="change-genesis">
+<h3>Change Genesis<a class="headerlink" href="#change-genesis" title="Permalink to this headline"></a></h3>
+<p>To change the genesis version, delete <code class="docutils literal notranslate"><span class="pre">~/.terra/config/genesis.json</span></code>.</p>
+<p>You can recreate a genesis version via the following steps:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> terrad add-genesis-account <span class="k">$(</span>terrad keys show &lt;account-name&gt; -a<span class="k">)</span> 100000000uluna,1000usd
+ terrad gentx &lt;account-name&gt; 10000000uluna --chain-id<span class="o">=</span>&lt;network-name&gt; 
+ terrad collect-gentxs
+</pre></div>
+</div>
+</div>
+<div class="section" id="reset-personal-data">
+<h3>Reset personal data<a class="headerlink" href="#reset-personal-data" title="Permalink to this headline"></a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>You may be unable to use your node and its associated accounts after changing your personal data. Do not perform this action unless your node is disposable.</p>
+</div>
+<p>To change your personal data to a completely pristine state, delete both <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.terra/config/node_key.json</span></code>.</p>
+</div>
+<div class="section" id="node-health">
+<h3>Node health<a class="headerlink" href="#node-health" title="Permalink to this headline"></a></h3>
+<p>A healthy node will have the following files in place and populated:</p>
+<ul class="simple">
+<li><p>Addressbook <code class="docutils literal notranslate"><span class="pre">~/.terra/config/addrbook.json</span></code></p></li>
+<li><p>Genesis file <code class="docutils literal notranslate"><span class="pre">~/.terra/config/genesis.json</span></code></p></li>
+<li><p>Validator state  <code class="docutils literal notranslate"><span class="pre">~/.terra/config/priv_validator_state.json</span></code></p></li>
+<li><p>Node key <code class="docutils literal notranslate"><span class="pre">~/.terra/config/node_key.json</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="resync">
+<h3>Resync<a class="headerlink" href="#resync" title="Permalink to this headline"></a></h3>
+<p>You can proceed to <a class="reference internal" href="sync.html"><span class="doc std std-doc">resync manually</span></a> or <a class="reference internal" href="sync.html#quicksync"><span class="std std-doc">via quicksync</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

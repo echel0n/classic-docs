@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sync &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Updates and additional settings" href="updates-and-additional.html" />
+    <link rel="prev" title="Join a network" href="join-a-network.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/README.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../README.html">Full node</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Run a full Terra node </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="system-config.html">System configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build-terra-core.html">Build Terra core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html">Set up a production environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set-up-production.html#run-the-server-as-a-daemon">Run the server as a daemon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configure-general-settings.html">Configure general settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join-a-network.html">Join a network</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="updates-and-additional.html">Updates and additional settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshoot.html">Reset and troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manage-a-terra-validator/README.html">Manage a validator </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/README.html">Node reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../develop/endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">Full node resources</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../spacecamp/README.html">Hackathon resources </a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../README.html">Full node</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Run a full Terra node </a></li>
+      <li class="breadcrumb-item active">Sync</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/full-node/run-a-full-terra-node/sync.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="sync">
+<h1>Sync<a class="headerlink" href="#sync" title="Permalink to this headline"></a></h1>
+<div class="section" id="before-sync">
+<h2>Before Sync<a class="headerlink" href="#before-sync" title="Permalink to this headline"></a></h2>
+<p>Certain files will need to be absent or deleted prior to download. A quicksync replaces blockchain data with a customized snapshot. For most use cases a “pruned” version is adequate. Pruned  versions will have certain transactions removed from the archive to make node performance smoother. If you are running a node for archival purposes, you will want an “archive” or “default” download.</p>
+<p>After choosing  the appropriate download type, examine your node and ensure  that <code class="docutils literal notranslate"><span class="pre">.terra/data</span></code> is empty.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">6</span>:22PM INF Removed all blockchain <span class="nb">history</span> <span class="nv">dir</span><span class="o">=</span>/home/ubuntu/.terra/data
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are a validator, ensure that you do not remove your private key.</p>
+<p>Example of a removed private key:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">6</span>:22PM INF Reset private validator file to genesis state <span class="nv">keyFile</span><span class="o">=</span>/home/ubuntu/.terra/config/priv_validator_key.json <span class="nv">stateFile</span><span class="o">=</span>/home/ubuntu/.terra/data/priv_validator_state.json
+</pre></div>
+</div>
+</div>
+<p>If you have an address book downloaded, you may keep it. Otherwise, you will need to download the <a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc">appropriate addressbook</span></a> prior to running  <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">start</span></code>.</p>
+</div>
+<div class="section" id="during-sync">
+<h2>During Sync<a class="headerlink" href="#during-sync" title="Permalink to this headline"></a></h2>
+<p>After <a class="reference internal" href="join-a-network.html#join-a-public-network"><span class="std std-doc">Joining a public network</span></a>, your node will begin to sync.</p>
+<div class="caution admonition">
+<p class="admonition-title">Sync start times</p>
+<p>Nodes take at least an hour to start syncing. This wait is normal. Before troubleshooting a sync, please wait an hour for the sync to start.</p>
+</div>
+</div>
+<div class="section" id="monitor-the-sync">
+<h2>Monitor the sync<a class="headerlink" href="#monitor-the-sync" title="Permalink to this headline"></a></h2>
+<p>Your node is catching up with the network by replaying all the transactions from genesis and recreating the blockchain state locally. You can verify this process by checking the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> in the <code class="docutils literal notranslate"><span class="pre">SyncInfo</span></code> of the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>  {
+    &quot;SyncInfo&quot;: {
+        &quot;latest_block_height&quot;: &quot;42&quot;, &lt;-----
+        &quot;catching_up&quot;        : true
+    },
+  ...
+  }
+</pre></div>
+</div>
+<p>Compare this height to the <strong>Latest Blocks</strong> on <a class="reference external" href="https://terra.stake.id/#/">stake.id</a> to see your progress.</p>
+</div>
+<div class="section" id="quicksync">
+<h2>Quicksync<a class="headerlink" href="#quicksync" title="Permalink to this headline"></a></h2>
+<p>You can significantly accelerate the synchronization process by providing <code class="docutils literal notranslate"><span class="pre">terrad</span></code> with a recent snapshot of the network state. Snapshots are made publicly available by the Terra community and can be downloaded at <a class="reference external" href="https://quicksync.io/networks/terra.html">https://quicksync.io/networks/terra.html</a>. Choose the snapshot corresponding to your network type (<code class="docutils literal notranslate"><span class="pre">testnet</span></code>/<code class="docutils literal notranslate"><span class="pre">mainnet</span></code>) and a mirror close to the location of your node server.</p>
+<p>Before downloading a snapshot, make sure that you have the streaming and unpacking utilities installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get install wget liblz4-tool aria2 -y
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Copy the download URL</p>
+<p>Don’t click the download link if you are using a separately hosted node, as this will not download to the correct machine. Instead, copy the link by right-clicking the  <code class="docutils literal notranslate"><span class="pre">Download</span></code> button. Downloading locally is not recommended unless you are hosting your node on the same computer from which you are browsing.</p>
+<p>The link in your clipboard should resemble the following:</p>
+<p><em><strong><a class="reference external" href="https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4">https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4</a></strong></em></p>
+</div>
+<p>The archived snapshot contains the state and transactions of the network, which are stored in the <code class="docutils literal notranslate"><span class="pre">~/.terra/data/</span></code> folder by default. You should navigate exactly to the <code class="docutils literal notranslate"><span class="pre">~/.terra/</span></code> folder before proceeding to unpack it, or make sure that the contents of the archive are placed into <code class="docutils literal notranslate"><span class="pre">~/.terra/</span></code>.</p>
+<ol class="arabic">
+<li><p>Download the snapshot.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># aria2c is a multi-source command-line download utility</span>
+<span class="c1"># specify N cores(up to 16) to speed up the process via -xN (5 cores used below)</span>
+aria2c -x5 https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
+</pre></div>
+</div>
+</li>
+<li><p>Unpack the <code class="docutils literal notranslate"><span class="pre">.lz4</span></code> archive:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lz4 -d bombay-12-default.20220107.0510.tar.lz4
+</pre></div>
+</div>
+</li>
+<li><p>Unpack the <code class="docutils literal notranslate"><span class="pre">.tar</span></code> archive into <code class="docutils literal notranslate"><span class="pre">~/.terra</span></code>. Its contents must replace <code class="docutils literal notranslate"><span class="pre">~/.terra/data/</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -xvf bombay-12-default.20220107.0510.tar
+</pre></div>
+</div>
+<p>Due to the size of the network, this may take some time.</p>
+</li>
+<li><p>After the snapshot is completely unpacked, start <code class="docutils literal notranslate"><span class="pre">terrad</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="sync-complete">
+<h2>Sync Complete<a class="headerlink" href="#sync-complete" title="Permalink to this headline"></a></h2>
+<p>You can tell that your node is in sync with the network when <code class="docutils literal notranslate"><span class="pre">SyncInfo.catching_up</span></code> in the <code class="docutils literal notranslate"><span class="pre">terrad</span> <span class="pre">status</span></code> response returns <code class="docutils literal notranslate"><span class="pre">false</span></code> and the <code class="docutils literal notranslate"><span class="pre">latest_block_height</span></code> corresponds to the public network blockheight found on <a class="reference external" href="https://terra.stake.id/#/"> stake.id </a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad status  
+</pre></div>
+</div>
+<p><strong>Example</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>  {
+    &quot;SyncInfo&quot;: {
+        &quot;latest_block_height&quot;: &quot;7356350&quot;,
+        &quot;catching_up&quot;        : false
+    },
+  ...
+  }
+</pre></div>
+</div>
+<p>Validators can view the status of the network using <a class="reference external" href="https://finder.terra.money">Terra Finder</a>.</p>
+</div>
+<div class="section" id="verify-the-snapshot">
+<h2>Verify the snapshot<a class="headerlink" href="#verify-the-snapshot" title="Permalink to this headline"></a></h2>
+<p>To verify the validity of the snapshot, use a <code class="docutils literal notranslate"><span class="pre">sha512sum</span></code> to check it against a cosmos validator’s registry of transactions.</p>
+<div class="section" id="compare-checksum-with-its-on-chain-version">
+<h3>Compare checksum with its on-chain version.<a class="headerlink" href="#compare-checksum-with-its-on-chain-version" title="Permalink to this headline"></a></h3>
+<p>For this example, use the following snapshot URL:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4</span></code></p>
+<ol class="arabic">
+<li><p>To make things easier for checking, assign the URL to a variable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">URL</span><span class="o">=</span>https://dl2.quicksync.io/bombay-12-default.20220107.0510.tar.lz4
+</pre></div>
+</div>
+</li>
+<li><p>Obtain the checksum for the snapshot:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget <span class="nv">$URL</span>.checksum
+<span class="c1"># bombay-12-default.20220 100%[==============================&gt;]  59.55K   215KB/   s    in 0.3s    </span>
+<span class="c1"># 2022-01-08 07:30:06 (215 KB/s) - &#39;bombay-12-   default.20220107.0510.tar.lz4.checksum.1&#39; saved [60984/60984]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Obtain the tx hash and assign it to a variable for brevity:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">HASH</span><span class="o">=</span><span class="k">$(</span>curl -s <span class="nv">$URL</span>.hash<span class="k">)</span>   
+<span class="c1"># 80E12115FEA1B3A161A2FDE7367FC34B8714EF398DAE5B1396F9748BC6218DB1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Obtain the transaction profile and verify it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -s https://lcd-cosmos.cosmostation.io/txs/<span class="k">$(</span>curl -s <span class="nv">$URL</span>.hash<span class="k">)</span> <span class="p">|</span> jq -r    <span class="s1">&#39;.tx.value.memo&#39;</span><span class="p">|</span>sha512sum -c
+<span class="c1"># bombay-12-default.20220107.0510.tar.lz4.checksum: OK</span>
+</pre></div>
+</div>
+</li>
+<li><p>Obtain the checksum script and verify the provided snapshot:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/chainlayer/quicksync-playbooks/master/   roles/quicksync/files/checksum.sh
+./checksum.sh <span class="k">$(</span>basename <span class="nv">$URL</span><span class="k">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="sync-faster-during-testing">
+<h2>Sync faster during testing<a class="headerlink" href="#sync-faster-during-testing" title="Permalink to this headline"></a></h2>
+<p>Sometimes you may want to sync faster by foregoing checks. This command should only be used by advanced users in non-production environments. To speed up the sync process during testing, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>terrad start --x-crisis-skip-assert-invariants
+</pre></div>
+</div>
+</div>
+<div class="section" id="congratulations">
+<h2>Congratulations!<a class="headerlink" href="#congratulations" title="Permalink to this headline"></a></h2>
+<p>You’ve successfully joined a network as a full node operator. If you are a validator, continue to <a class="reference internal" href="../manage-a-terra-validator/README.html"><span class="doc std std-doc">manage a Terra validator</span></a> for the next steps.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

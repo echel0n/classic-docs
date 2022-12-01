@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Websockets &mdash; Terra Classic Docs  documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/docs_favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Terra.py" href="../get-started-py.html" />
+    <link rel="prev" title="Wallets" href="wallets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html">
+            <img src="../../../../_static/docs_logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learn/README.html">Learn</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../full-node/README.html">Full node</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ecosystem/README.html">Ecosystem</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../spacecamp/README.html">Hackathon resources </a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../learn/terra-station/README.html">Terra Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/README.html">Terrain Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-localterra.html">Use Terrain with LocalTerra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-localterra.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-testnet.html">Use Terrain with the testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/quick-start/using-terrain-testnet.html#counter-tutorial">Counter tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dapp/smart-contracts/README.html">In-depth dApp guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoints.html">RPC and LCD endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module-specifications/README.html">Terra Core modules </a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="README.html">Terra.js </a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="README.html#contents">Contents </a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="getting-started.html">Get started with Terra.js</a></li>
+<li class="toctree-l4"><a class="reference internal" href="common-examples.html">Common examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-modules.html">Add modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coin-and-coins.html">Coin and Coins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fees.html">Fees</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ibc.html">IBC Transfers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keys.html">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="make-a-connection.html">Make a connection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="msgAuthorization.html">MsgAuthorization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multisend.html">MsgSend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="numeric.html">Numeric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="oracle-feeder.html">Oracle feeder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="query-data.html">Query data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smart-contracts.html">Smart contracts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wallets.html">Wallets</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Websockets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference external" href="https://terra-money.github.io/terra.py/">Terra.py</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://faucet.terra.money/">Faucet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ecosystem/integrations.html">Block explorers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Terra Classic Docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../README.html">Develop</a></li>
+          <li class="breadcrumb-item"><a href="../README.html">SDKs</a></li>
+          <li class="breadcrumb-item"><a href="README.html">Terra.js </a></li>
+      <li class="breadcrumb-item active">Websockets</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/docs/develop/sdks/terra-js/Websockets.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="websockets">
+<h1>Websockets<a class="headerlink" href="#websockets" title="Permalink to this headline"></a></h1>
+<div class="section" id="websocketclient">
+<h2><code class="docutils literal notranslate"><span class="pre">WebSocketClient</span></code><a class="headerlink" href="#websocketclient" title="Permalink to this headline"></a></h2>
+<p>Terra.js comes with <code class="docutils literal notranslate"><span class="pre">WebSocketClient</span></code>, which abstracts a subscription to Tendermint RPC’s WebSocket endpoint. This requires access to a Terra node’s RPC server, which may required privileged access as it exposes functions that can kill the node’s operation. With LocalTerra, the WebSocket endpoint can be accessed at <code class="docutils literal notranslate"><span class="pre">ws://localhost:26657/websocket</span></code>.</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="p">,</span><span class="w"> </span><span class="nx">WebSocketClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@terra-money/terra.js&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">wsclient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocketClient</span><span class="p">(</span><span class="s1">&#39;ws://localhost:26657/websocket&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">terra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LocalTerra</span><span class="p">();</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"></span>
+<span class="nx">wsclient</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">&#39;NewBlock&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="p">(</span><span class="nx">_</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">wsclient</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="c1">// send tracker</span><span class="w"></span>
+<span class="nx">wsclient</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">&#39;Tx&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;message.action&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/cosmos.bank.v1beta1.MsgSend&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Send occured!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="nx">wsclient</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="section" id="supported-events">
+<h3>Supported Events<a class="headerlink" href="#supported-events" title="Permalink to this headline"></a></h3>
+<p>You can subscribe to the following recognized Tendermint events:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CompleteProposal</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Evidence</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lock</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NewBlock</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NewBlockHeader</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NewRound</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NewRoundStep</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Polka</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Relock</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimeoutPropose</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimeoutWait</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Unlock</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ValidatorSetUpdates</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ValidBlock</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Vote</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="query">
+<h3>Query<a class="headerlink" href="#query" title="Permalink to this headline"></a></h3>
+<p>In order to specify the Tendermint query, the following syntax is used:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kr">type</span><span class="w"> </span><span class="nx">TendermintQueryOperand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Date</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">TendermintQuery</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nx">k</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">]</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nx">TendermintQueryOperand</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Date</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Date</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;&lt;=&#39;</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Date</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;&gt;=&#39;</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Date</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;CONTAINS&#39;</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;EXISTS&#39;</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The following shows an example of how to construct a <code class="docutils literal notranslate"><span class="pre">TendermintQuery</span></code> and use it for a subscription:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">tmQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;message.action&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/cosmos.bank.v1beta1.MsgSend&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;tx.timestamp&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;store_code.abc&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;EXISTS&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;abc.xyz&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CONTAINS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;terra1...&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="nx">wsclient</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">&#39;Tx&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tmQuery</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// do something with data ...</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The resultant query will be:</p>
+<p><code class="docutils literal notranslate"><span class="pre">tm.event='Tx'</span> <span class="pre">AND</span> <span class="pre">message.action='/cosmos.bank.v1beta1.MsgSend'</span> <span class="pre">tx.timestamp</span> <span class="pre">&gt;=</span> <span class="pre">2020-12-12</span> <span class="pre">AND</span> <span class="pre">store_code.abc</span> <span class="pre">EXISTS</span> <span class="pre">AND</span> <span class="pre">abc.xyz</span> <span class="pre">CONTAINS</span> <span class="pre">'terra1...'</span></code></p>
+</div>
+<div class="section" id="subscribetx">
+<h3><code class="docutils literal notranslate"><span class="pre">subscribeTx</span></code><a class="headerlink" href="#subscribetx" title="Permalink to this headline"></a></h3>
+<p>It is a common use case to subscribe to transactions with a Tendermint query, such as listening for when specific addresses send or receive funds, or when specific events are triggered from within smart contracts. However, it is hard to extract data because the transaction result is encoded in Base64 Amino encoding. If you use <code class="docutils literal notranslate"><span class="pre">subscribeTx</span></code>, Terra.js will automatically inject the <code class="docutils literal notranslate"><span class="pre">txhash</span></code> into the resultant data value so you can more easily look up the transaction to decode it using <code class="docutils literal notranslate"><span class="pre">LCDClient</span></code>.</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// swap tracker</span><span class="w"></span>
+<span class="nx">wsclient</span><span class="p">.</span><span class="nx">subscribeTx</span><span class="p">({</span><span class="w"> </span><span class="s1">&#39;message.action&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;swap&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Swap occured!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">txInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">terra</span><span class="p">.</span><span class="nx">tx</span><span class="p">.</span><span class="nx">txInfo</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">TxResult</span><span class="p">.</span><span class="nx">txhash</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">txInfo</span><span class="p">.</span><span class="nx">logs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">txInfo</span><span class="p">.</span><span class="nx">logs</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">eventsByType</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer class="footer">
+  <p>
+    
+
+    <div class="extra_footer container">
+      <div class="row">
+
+        <div class="col">
+
+          <div class="logos">
+            <a href="https://discord.gg/terra-rebels" rel="noopener" target="_blank"><img src="/discord.svg" alt="link to Terra Rebels discord room"></a>&nbsp;
+            <a href="https://medium.com/terra-money" rel="noopener" target="_blank"><img src="/medium.svg" alt="link to Terra medium"></a>&nbsp;
+            <a href="https://twitter.com/terrarebels" rel="noopener" target="_blank"><img src="/twitter.svg" alt="link to Terra Rebels twitter"></a>&nbsp;
+<!--             <a href="https://www.youtube.com/channel/UCoV1RXZ9ZBGcuu_PMTTlM0g" rel="noopener" target="_blank"><img src="/icon_youtube.png" alt="link to Terra youtube"></a>&nbsp; -->
+            <a href="https://t.me/OfficialTerraRebels" rel="noopener" target="_blank"><img src="/icon_telegram.png" alt="link to Terra Rebels telegram room"></a>
+            <br/><br/>
+          </div>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://www.terrarebels.net/" >terrarebels.net</a> <br/>
+          <a href="mailto:contact@terrarebels.net" >Contact</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col-md-auto">
+
+          <a href="https://assets.website-files.com/611153e7af981472d8da199c/618b02d13e938ae1f8ad1e45_Terra_White_paper.pdf" >Whitepaper</a> <br/>
+          <a href="https://certik.org/projects/terra" >Security Audit</a> <br/>
+          <a href="https://agora.terrarebels.net/" >Agora forum</a> <br/>
+          <br/>
+
+        </div>
+
+        <div class="col">
+          <a href="https://finder.terra.money/" >Terra Finder</a> <br/>
+          <a href="https://station.terrarebels.net/" >Rebel Station</a> <br/>
+          <br/>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </p>
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
