@@ -63,7 +63,7 @@ html_scaled_image_link = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_book_theme"
+html_theme = "pydata-sphinx-theme"
 html_logo = "img/docs_logo.svg"
 html_favicon = "img/docs_favicon.ico"
 
@@ -102,7 +102,18 @@ nitpicky = True
 
 
 # Theme options
-
+html_theme_options = {
+    "path_to_docs": "docs",
+    "repository_url": "https://github.com/terra-rebels/classic-docs",
+    "use_repository_button": True,
+    "use_edit_page_button": False,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+    "logo_only": True,
+    "show_toc_level": 3,
+    "extra_navbar": False,
+}
 
 # Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
 redirects = {
