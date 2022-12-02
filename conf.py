@@ -115,8 +115,7 @@ html_theme_options = {
     "use_download_button": True,
     "logo_only": True,
     "show_toc_level": 3,
-    "extra_navbar": False,
-    "extra_footer": footer_html
+    "extra_navbar": False
 }
 
 # Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
