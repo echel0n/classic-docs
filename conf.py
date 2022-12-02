@@ -63,7 +63,7 @@ html_scaled_image_link = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "pydata-sphinx-theme"
+html_theme = "pydata_sphinx_theme"
 html_logo = "img/docs_logo.svg"
 html_favicon = "img/docs_favicon.ico"
 
