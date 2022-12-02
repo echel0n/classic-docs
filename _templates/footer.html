@@ -1,6 +1,6 @@
-{% extends '!layout.html' %}
-
-{% block footer %}
+{% extends "!footer.html" %}
+{%- block contentinfo %}
+{{ super }}
       <p>
         {% if author %}
           {{ translate('By') }} {{ author }}<br/>
