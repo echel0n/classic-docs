@@ -14,6 +14,9 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+with open('_templates/footer.html', 'r') as file:
+    footer_html = file.read()
+    
 # -- Project information -----------------------------------------------------
 
 project = 'Terra Classic Docs'
@@ -113,7 +116,7 @@ html_theme_options = {
     "logo_only": True,
     "show_toc_level": 3,
     "extra_navbar": False,
-    "extra_footer": True
+    "extra_footer": footer_html
 }
 
 # Redirects (visit https://documatt.gitlab.io/sphinx-reredirects/usage.html for more info)
