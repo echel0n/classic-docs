@@ -13,9 +13,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
-with open('_templates/footer.html', 'r') as file:
-    footer_html = file.read()
     
 # -- Project information -----------------------------------------------------
 
